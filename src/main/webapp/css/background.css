@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+@import url("base.css");
+
+.bg {
+    height: 100vh;
+    min-width: 900px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+            125deg,
+            #e5685a,
+            #9c88ff,
+            #3cadeb,
+            #37ab67
+    );
+    background-size: 300%;
+    animation: bg-move 20s infinite;
+}
+
+@keyframes bg-move {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.center {
+    display: flex;
+    backdrop-filter: blur(5px);
+    width: 50%;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 354px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.card-image {
+    flex: 1;
+}
+
+.container {
+    width: 400px;
+    font-family: "微软雅黑", serif;
+    margin-left: 60px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    user-select: none;
+    margin-bottom: 12px;
+}
+
+input,
+select {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 240px;
+    margin: 10px 0;
+    border: 1px solid #999;
+    padding: 0.5em 1em;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+span.form-label {
+    color: #333;
+    display: inline-block;
+    width: 80px;
+}
+
+.login-btn {
+    width: 320px;
+    background-color: #ff6700;
+    color: #fff;
+    cursor: pointer;
+}
+.login-btn:hover {
+    background-color: #ee4000;
+}
+.login-btn:active {
+    background-color: #ff0000;
+}
+
+input[type="text"]:focus {
+    outline: 1px solid #ff6700;
+    box-shadow: 0 0 3px 1px #808080;
+}
+
+.container input:focus {
+    box-shadow: 0 0 3px 1px #ff3030;
+    outline: 1px solid #ff6700;
+}
+
+input:required {
+    border-right: 3px solid #ff3030;
+}
+
+.link > a {
+    color: #333;
+    position: absolute;
+    user-select: none;
+    text-decoration: none;
+}
+
+.link > a::after {
+    display: block;
+    content: "";
+    width: 64px;
+    border-bottom: #333 solid 2px;
+}
+
+.link > a:hover {
+    font-weight: bold;
+}
+
+.link > a:active {
+    color: #000;
+}
+
+@media screen and (max-width: 1560px) {
+    .card-image {
+        display: none;
+    }
+}

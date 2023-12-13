@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.user-list:focus {
+    box-shadow: 0 0 3px 1px #ff3030;
+    outline: 1px solid #ff6600;
+}
+
+.link {
+    margin-top: 18px;
+}
