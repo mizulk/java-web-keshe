@@ -1,8 +1,16 @@
 package team.skadi.javaweb.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.*;
+import team.skadi.javaweb.pojo.Book;
+
+import java.util.List;
 
 @Mapper
-public class BookMapper {
+public interface BookMapper {
+	@Select("SELECT * FROM books;")
+	List<Book> selectAll();
 
+	List<Book> page(Book book);
+
+	void updateBook(Book book);
 }

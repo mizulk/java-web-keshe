@@ -3,5 +3,65 @@
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="team.skadi.javaweb.mapper.BookMapper">
+	<update id="updateBook">
+		UPDATE books
+		<set>
+			<if test="bookName != null">
+				book_name = #{bookName},
+			</if>
+			<if test="author != null">
+				author = #{author},
+			</if>
+			<if test="publisher != mull">
+				publisher = #{publisher},
+			</if>
+			<if test="price != null">
+				price = #{price},
+			</if>
+			<if test="bookType != null">
+				book_type = #{bookType},
+			</if>
+			<if test="repertory != null">
+				repertory = #{repertory},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime}
+			</if>
+		</set>
+		<choose>
+			<when test="id != null">
+				WHERE id = #{id}
+			</when>
+			<otherwise>
+				WHERE book_name = #{bookName}
+			</otherwise>
+		</choose>
+	</update>
 
+	<select id="page" resultType="team.skadi.javaweb.pojo.Book">
+		SELECT * FROM `books`
+		<where>
+			<if test="bookName != null">
+				book_name = #{bookName}
+			</if>
+			<if test="author != null">
+				AND author = #{author}
+			</if>
+			<if test="publisher != mull">
+				AND publisher = #{publisher}
+			</if>
+			<if test="price != null">
+				AND price = #{price}
+			</if>
+			<if test="bookType != null">
+				AND book_type = #{bookType}
+			</if>
+			<if test="repertory != null">
+				AND repertory = #{repertory}
+			</if>
+		</where>
+	</select>
 </mapper>
