@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.btn {
+    --primary-blue-normal: #409eff;
+    --primary-blue-darken: #337ecc;
+    --primary-blue-lighten: #79bbff;
+
+    padding: 6px 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue-normal);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-blue-lighten);
+}
+
+.btn-primary:active {
+    background-color: var(--primary-blue-darken);
+}
+
+.btn-normal {
+    border: 1px solid #dcdfe6;
+}
+
+.btn-normal:hover {
+    background-color: #ecf5ff;
+    color: var(--primary-blue-normal);
+    border-color: #c6e2ff;
+}
+
+.btn-normal:active {
+    border-color: var(--primary-blue-normal);
+}

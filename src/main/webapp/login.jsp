@@ -7,7 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>欢迎登录</title>
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/login.css">
 </head>

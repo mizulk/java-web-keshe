@@ -5,10 +5,10 @@
   Time: 22:29
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>logo</title>
     <style>
         .logo {
             position: absolute;
@@ -33,7 +33,7 @@
 <body>
 <div class="logo">
     <img src="./img/Logo.png" alt="logo-image"/>
-    <span>图书管理系统</span>
+    <span>图书销售系统</span>
 </div>
 </body>
 </html>

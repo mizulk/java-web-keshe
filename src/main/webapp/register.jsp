@@ -7,7 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>欢迎注册</title>
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/register.css">
 </head>
@@ -17,7 +17,7 @@
 <div class="bg">
     <div class="center">
         <div class="card-image">
-            <img src="./img/reg.jpg" style="width: 354px"/>
+            <img src="./img/reg.jpg" style="width: 354px" alt="reg.png"/>
         </div>
         <div class="card-right">
             <div class="container">
