@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+.top_menu {
+    height: 70px;
+    background-color: #262638;
+}
+
+.main {
+    width: 100%;
+    margin: 0px auto;
+}
+
+/* .header{
+    background: #ff0;
+    overflow: hidden;
+} */
+.h_main,
+#sidebar {
+    float: left;
+    height: 90vh;
+}
+
+#sidebar {
+    width: 15%;
+    background-color: rgb(42, 63, 84);
+}
+
+.h_main {
+    width: 85%;
+    background: rgb(245, 245, 245);
+    height: 90vh;
+}
+
+#sidebar header h {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+#sidebar .nav {
+    margin-left: -40px;
+}
+
+#sidebar .nav h {
+    background: none;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #455a64;
+    color: #cfd8dc;
+    padding: 16px 24px;
+    cursor: pointer;
+}
+
+#sidebar .nav h5 {
+    background: none;
+    display: block;
+    border-bottom: 1px solid #455a64;
+    padding: 16px 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#sidebar .nav h5 a {
+    color: #cfd8dc;
+    text-decoration: none;
+}
+
+#sidebar .nav h:hover {
+    background-color: rgb(53, 73, 93);
+    color: #fff;
+}
+
+#sidebar .nav h5:hover {
+    background-color: rgb(53, 73, 93);
+    color: #fff;
+}
+
+.hide {
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s;
+}
+
+.hide h5 {
+    padding: 10px 0;
+    background-color: #282c3a;
+    text-align: center;
+    color: #fff;
+    border-bottom: #42495d;
+}
+
+.m_main {
+    width: 95%;
+    height: 95%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.tableBox {
+    /* width: 1150px;
+    height: 680px;
+    margin: auto; */
+    width: 80%;
+    height: 80%;
+    margin-top: 60px;
+    margin: 40px auto;
+}
+
+.tableBox table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    /* border: 1px solid rgba(230,230,230,1); */
+}
+
+.tableBox table th,
+td {
+    border: 1px solid rgba(230, 230, 230, 1);
+}
+
+.tableBox table tr {
+    height: 48px;
+}
+
+.tableBox table thead tr th {
+    color: #fff;
+    background: #455a64;
+}
+
+.tableBox table thead tr th:nth-child(odd) {
+    background-color: #7dafe4;
+}
+
+.tableBox table tr th {
+    height: 48px;
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+    font-weight: 500;
+
+}
+
+.tableBox table tbody tr td {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0;
+    font-weight: 400;
+    text-align: center;
+}
+
+/** 这里当tbody中的tr是2的倍数的时候给他背景色 **/
+.tableBox table tbody tr:nth-child(odd) {
+    background: rgb(223, 224, 224, 0.6);
+}
+
+/* .tableBox table tbody tr td:last-child {
+    color: #3389E0;
+} */
+
+.tableBox table tbody tr:hover {
+
+    background: rgb(200, 200, 200);
+}
+
+/** 设置tbody超出高度滚动 **/
+.tableBox table tbody {
+    display: block;
+    height: 532px;
+    overflow-y: scroll;
+}
+
+.tableBox table thead,
+.tableBox table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    /*重要  表格固定算法*/
+}
+
+.tableBox table thead {
+    /*留出滚动条的位置*/
+    width: calc(100% - 5px)
+}
+
+/*设置滚动条的样式*/
+.tableBox table tbody::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 5px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+}
+
+.tableBox table tbody::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    background-color: #7dafe4;
+}
+
+.tableBox table tbody::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(29, 94, 164, 0.4);
+    /* background: #ededed; */
+    border-radius: 10px;
+
+}
