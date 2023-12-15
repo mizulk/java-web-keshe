@@ -8,12 +8,18 @@
 <html>
 <head>
     <title>欢迎登录</title>
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="./css/background.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
 </head>
 <body>
 <jsp:include page="logo.jsp"/>
 
+<jsp:include page="dialog.jsp">
+    <jsp:param name="showImmediately" value="false"/>
+    <jsp:param name="title" value="提示"/>
+</jsp:include>
 <div class="bg">
     <div class="center">
         <div class="card-right">

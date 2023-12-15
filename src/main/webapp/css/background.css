@@ -117,6 +117,7 @@ input:required {
     position: absolute;
     user-select: none;
     text-decoration: none;
+    transition: .4s;
 }
 
 .link > a::after {

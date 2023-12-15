@@ -8,10 +8,6 @@
 <%
     request.setCharacterEncoding("utf-8");
 %>
-<%--<jsp:forward page="login.jsp"/>--%>
-<jsp:forward page="dialog.jsp">
-    <jsp:param name="title" value="114514"/>
-    <jsp:param name="content" value="<input>"/>
-</jsp:forward>
+<jsp:forward page="login.jsp"/>
 </body>
 </html>
