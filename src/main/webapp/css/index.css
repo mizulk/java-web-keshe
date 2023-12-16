@@ -1,98 +1,14 @@
-.top_menu {
-    height: 70px;
-    background-color: #262638;
-    user-select: none;
-}
+@charset "utf-8";
 
-.main {
-    width: 100%;
-    margin: 0px auto;
-}
-
-.h_main,
-#sidebar {
-    float: left;
-    height: 90vh;
-}
-
-#sidebar {
-    width: 15%;
-    background-color: rgb(42, 63, 84);
-    user-select: none;
-}
-
-.h_main {
-    width: 85%;
-    background: rgb(245, 245, 245);
-    height: 90vh;
-}
-
-#sidebar header h {
-    color: #fff;
-    display: block;
-    text-decoration: none;
-}
-
-#sidebar .nav {
-    margin-left: -40px;
-}
-
-#sidebar .nav h {
-    background: none;
-    display: block;
-    text-decoration: none;
-    border-bottom: 1px solid #455a64;
-    color: #cfd8dc;
-    padding: 16px 24px;
-    cursor: pointer;
-}
-
-#sidebar .nav h5 {
-    background: none;
-    display: block;
-    border-bottom: 1px solid #455a64;
-    padding: 16px 24px;
-    cursor: pointer;
-    user-select: none;
-}
-
-#sidebar .nav h5 a {
-    color: #cfd8dc;
-    text-decoration: none;
-}
-
-#sidebar .nav h:hover {
-    background-color: rgb(53, 73, 93);
-    color: #fff;
-}
-
-#sidebar .nav h5:hover {
-    background-color: rgb(53, 73, 93);
-    color: #fff;
-}
-
-.hide {
-    overflow: hidden;
-    height: 0;
-    transition: 0.5s;
-}
-
-.hide h5 {
-    padding: 10px 0;
-    background-color: #282c3a;
-    text-align: center;
-    color: #fff;
-    border-bottom: #42495d;
-}
+@import url("./readerMain.css");
 
 .header_main {
-    height: 10%;
+    height: 80px;
     background-color: rgb(255, 255, 255);
 }
 
 .search {
     float: right;
-
 }
 
 .search input {
@@ -112,35 +28,38 @@
     cursor: pointer;
 }
 
-.adv1 {
-    background: #FFFF00;
-    height: 250px;
-    margin-top: 10px;
-}
-
-.adv3 {
-    background: red;
-    height: 60px;
-    margin-top: 10px;
-}
-
 .adv2 {
+    overflow-y: scroll;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /*            grid-template-columns为列宽，grid-template-rows为行高*/
-    grid-template-rows: 35vh 35vh;
-    /*            设置两行高度值为150px的行*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, 290px);
     grid-gap: 25px 25px;
-    /*            每行每列的间距均为10px*/
+    flex-grow: 1;
+    margin-top: 14px;
 }
 
-.adv2>* {
+.adv2 > *:not(:first-child) {
+    background-image: url("https://img11.360buyimg.com/n7/jfs/t7957/227/2622689294/461159/86a7443e/59b22e50N6e1d836e.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 290px;
+}
+
+.adv2 > *,
+.adv2 div:first-child {
     background: cyan;
     cursor: pointer;
+    transition: all .2s;
 }
 
+.adv2 > *:hover {
+    z-index: 2;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    transform: translate3d(0, -2px, 0);
+}
 
-/*        设置第一个子div的样式*/
+/* 设置第一个子div的样式*/
 .adv2 div:first-child {
     grid-row-start: 1;
     grid-row-end: 3;

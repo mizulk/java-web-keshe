@@ -1,98 +1,16 @@
-.top_menu {
-    height: 70px;
-    background-color: #262638;
-}
+@charset "utf-8";
 
-.main {
-    width: 100%;
-    margin: 0px auto;
-}
-
-.h_main,
-#sidebar {
-    float: left;
-    height: 90vh;
-}
-
-#sidebar {
-    width: 15%;
-    background-color: rgb(42, 63, 84);
-}
-
-.h_main {
-    width: 85%;
-    background: rgb(245, 245, 245);
-    height: 90vh;
-}
-
-#sidebar header h {
-    color: #fff;
-    display: block;
-    text-decoration: none;
-}
-
-#sidebar .nav {
-    margin-left: -40px;
-}
-
-#sidebar .nav h {
-    background: none;
-    display: block;
-    text-decoration: none;
-    border-bottom: 1px solid #455a64;
-    color: #cfd8dc;
-    padding: 16px 24px;
-    cursor: pointer;
-}
-
-#sidebar .nav h5 {
-    background: none;
-    display: block;
-    border-bottom: 1px solid #455a64;
-    padding: 16px 24px;
-    cursor: pointer;
-    user-select: none;
-}
-
-#sidebar .nav h5 a {
-    color: #cfd8dc;
-    text-decoration: none;
-}
-
-#sidebar .nav h:hover {
-    background-color: rgb(53, 73, 93);
-    color: #fff;
-}
-
-#sidebar .nav h5:hover {
-    background-color: rgb(53, 73, 93);
-    color: #fff;
-}
-
-.hide {
-    overflow: hidden;
-    height: 0;
-    transition: 0.5s;
-}
-
-.hide h5 {
-    padding: 10px 0;
-    background-color: #282c3a;
-    text-align: center;
-    color: #fff;
-    border-bottom: #42495d;
-}
+@import url("./readerMain.css");
+@import url("./basic-input.css");
 
 .m_main {
     width: 95%;
     height: 90%;
     padding-top: 30px;
     margin: 20px auto;
-    /* background-color: rgb(125, 125, 188); */
 }
 
 .left {
-    width: 60%;
     width: 60%;
     height: 100%;
     background-color: rgb(255, 255, 255);
@@ -106,10 +24,10 @@
     float: right;
 }
 
-.container {
+.modify-container {
     width: 600px;
-    margin: 30px atuo;
-    font-family: "微软雅黑";
+    margin: 30px auto;
+    font-family: "微软雅黑", serif;
     padding-left: 120px;
     padding-top: 80px;
 }
@@ -137,32 +55,8 @@ select {
     font-size: larger;
 }
 
-input[type="submit"] {
-    width: 100px;
-    background-color: #FF6700;
-    color: #FFF;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #FF0000;
-}
-
-input[type="text"]:focus {
-    outline: 1px solid #ff6600;
-    border: none;
-    box-shadow: 0 0 3px 1px #808080;
-}
-
-input:focus {
-    box-shadow: 0 0 3px 1px #FF3030;
-}
-
-input:requirred {
-    border-right: 3px solid #FF3030;
-}
-
-.container input:focus {
-    box-shadow: 0 0 3px 1px #ff3030;
-    outline: 1px solid var(--orange);
+@media screen and (max-width: 1370px) {
+    .right {
+        background-color: #fff;;
+    }
 }

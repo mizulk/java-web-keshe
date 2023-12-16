@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-@import url("base.css");
+@import url("./base.css");
+@import url("./basic-input.css");
 
 .bg {
     height: 100vh;
@@ -79,37 +80,11 @@ select {
     padding: 0.5em 1em;
     background-color: rgba(255, 255, 255, 0.5);
 }
+
 span.form-label {
     color: #333;
     display: inline-block;
     width: 80px;
-}
-
-.login-btn {
-    width: 320px;
-    background-color: #ff6700;
-    color: #fff;
-    cursor: pointer;
-}
-.login-btn:hover {
-    background-color: #ee4000;
-}
-.login-btn:active {
-    background-color: #ff0000;
-}
-
-input[type="text"]:focus {
-    outline: 1px solid #ff6700;
-    box-shadow: 0 0 3px 1px #808080;
-}
-
-.container input:focus {
-    box-shadow: 0 0 3px 1px #ff3030;
-    outline: 1px solid #ff6700;
-}
-
-input:required {
-    border-right: 3px solid #ff3030;
 }
 
 .link > a {

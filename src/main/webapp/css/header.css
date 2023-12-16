@@ -1,0 +1,29 @@
+.user-header {
+    height: 10vh;
+    background-color: #262638;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 82px;
+}
+
+.logo-container {
+    width: 200px;
+    height: 70px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container > img {
+    margin-left: 10px;
+    border-radius: 50%;
+    height: 70px;
+}
+
+.logo-container > span {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 18px;
+}

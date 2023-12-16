@@ -1,93 +1,6 @@
-.top_menu {
-    height: 70px;
-    background-color: #262638;
-    user-select: none;
-}
+@charset "utf-8";
 
-.main {
-    width: 100%;
-    margin: 0px auto;
-}
-
-/* .header{
-    background: #ff0;
-    overflow: hidden;
-} */
-.h_main,
-#sidebar {
-    float: left;
-    height: 90vh;
-}
-
-#sidebar {
-    width: 15%;
-    background-color: rgb(42, 63, 84);
-}
-
-.h_main {
-    width: 85%;
-    background: rgb(245, 245, 245);
-    height: 90vh;
-}
-
-#sidebar header h {
-    color: #fff;
-    display: block;
-    text-decoration: none;
-}
-
-#sidebar .nav {
-    margin-left: -40px;
-}
-
-#sidebar .nav h {
-    background: none;
-    display: block;
-    text-decoration: none;
-    border-bottom: 1px solid #455a64;
-    color: #cfd8dc;
-    padding: 16px 24px;
-    cursor: pointer;
-    user-select: none;
-}
-
-#sidebar .nav h5 {
-    background: none;
-    display: block;
-    border-bottom: 1px solid #455a64;
-    padding: 16px 24px;
-    cursor: pointer;
-    user-select: none;
-}
-
-#sidebar .nav h5 a {
-    color: #cfd8dc;
-    text-decoration: none;
-}
-
-#sidebar .nav h:hover {
-    background-color: rgb(53, 73, 93);
-    color: #fff;
-}
-
-#sidebar .nav h5:hover {
-    background-color: rgb(53, 73, 93);
-    color: #fff;
-}
-
-.hide {
-    overflow: hidden;
-    height: 0;
-    transition: 0.5s;
-}
-
-.hide h5 {
-    padding: 10px 0;
-    background-color: #282c3a;
-    text-align: center;
-    color: #fff;
-    border-bottom: #42495d;
-}
+@import url("./readerMain.css");
 
 .header_main {
     height: 10%;
@@ -161,7 +74,7 @@ td {
 
 .tableBox table tr th {
     height: 48px;
-    font-family: PingFangSC-Medium;
+    font-family: PingFangSC-Medium, serif;
     font-size: 16px;
     color: #333333;
     letter-spacing: 0;
@@ -170,7 +83,7 @@ td {
 }
 
 .tableBox table tbody tr td {
-    font-family: PingFangSC-Regular;
+    font-family: PingFangSC-Regular, serif;
     font-size: 16px;
     color: #333333;
     letter-spacing: 0;

@@ -1,0 +1,28 @@
+input[type="submit"] {
+    width: 320px;
+    background-color: #ff6700;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #ee4000;
+}
+
+input[type="submit"]:active {
+    background-color: #ff0000;
+}
+
+input[type="text"]:focus {
+    outline: 1px solid #ff6700;
+    box-shadow: 0 0 3px 1px #808080;
+}
+
+input:focus {
+    box-shadow: 0 0 3px 1px #ff3030;
+    outline: 1px solid #ff6700;
+}
+
+input:required {
+    border-right: 3px solid #ff3030;
+}
