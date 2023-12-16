@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+	<typeAliases>
+		<package name="team.skadi.javaweb.pojo"/>
+	</typeAliases>
+
+	<plugins>
+		<!-- 使用分页插件 -->
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<!-- 分页参数合理化, 当页码数 < 0 时, 显示第一页.   当页码数 > 总页码数时, 显示最后一页  -->
+			<property name="reasonable" value="true"/>
+		</plugin>
+	</plugins>
+
+</configuration>

@@ -2,10 +2,39 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/mvc
-       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:database-config.properties"/>
+	<context:component-scan base-package="team.skadi.javaweb.mapper"/>
 	<mvc:annotation-driven/>
 	<mvc:default-servlet-handler/>
+
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="autoCommit" value="true"/>
+		<property name="connectionTimeout" value="30000"/>
+		<property name="idleTimeout" value="30000"/>
+		<property name="maximumPoolSize" value="16"/>
+		<property name="maxLifetime" value="1800000"/>
+	</bean>
+
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="team.skadi.javaweb.mapper"/>
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+	</bean>
+
+	<bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
 </beans>
