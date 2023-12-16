@@ -19,4 +19,6 @@ public class Reader {
 	private LocalDateTime birth;
 	private String address;
 	private LocalDateTime createTime;
+	private String eMail;
+	private String remark;
 }

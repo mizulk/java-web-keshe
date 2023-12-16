@@ -28,7 +28,13 @@
                 address = #{address},
             </if>
             <if test="createTime != null">
-                create_time = #{createTime}
+                create_time = #{createTime},
+            </if>
+            <if test="eMail != null">
+                e_mail = #{eMail},
+            </if>
+            <if test="remark != null">
+                remark = #{remark}
             </if>
         </set>
         <choose>
