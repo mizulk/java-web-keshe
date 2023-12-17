@@ -1,16 +1,37 @@
-/**
- * @param form {HTMLFormElement} 琛ㄥ崟
- * @return {boolean} 琛ㄥ崟楠岃瘉鏄惁閫氳繃
- */
-function loginCheck(form) {
-    if (form.type.value === '0') {
-        $(".dialog-content").text("璇烽�夋嫨鐢ㄦ埛绫诲瀷");
-        $(".dialog").fadeIn();
-        return false;
-    }
-    return false;
-}
-
 $(function () {
+    $("form").on("submit", function (event) {
+        let form = $(this)[0];
+        let dialogContent = $(".dialog-content");
+        let dialog = $(".dialog");
 
-})
+        let option = form.type.value;
+
+        if (option === '0') {
+            dialogContent.text("请选择用户类型");
+            dialog.fadeIn();
+        } else {
+            $.ajax({
+                url: "reader-login",
+                type: "post",
+                data: {
+                    account: form.account.value,
+                    password: form.password.value
+                },
+                success(res) {
+                    if (res === "ok") {
+                        form.password.value = "";
+                        window.location.href = option === '1' ? "managerIndex.jsp" : "readerIndex.jsp";
+                    } else {
+                        dialogContent.text(res);
+                        dialog.fadeIn();
+                    }
+                },
+                error(xhr, textStatus) {
+                    dialogContent.text("登录时发生错误：" + textStatus);
+                    dialog.fadeIn();
+                }
+            });
+            event.preventDefault();
+        }
+    });
+});

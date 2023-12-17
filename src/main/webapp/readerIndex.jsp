@@ -17,7 +17,10 @@
 </jsp:include>
 
 <div class="container">
-    <jsp:include page="managerSidebar.jsp"/>
+    <jsp:include page="readerSidebar.jsp">
+        <jsp:param name="activeName" value="首页"/>
+        <jsp:param name="activeMenu" value="0"/>
+    </jsp:include>
     <div class="h_main">
         <div class="header_main">
             <div class="search">

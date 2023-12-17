@@ -9,6 +9,8 @@
 
 	<context:property-placeholder location="classpath:database-config.properties"/>
 	<context:component-scan base-package="team.skadi.javaweb.mapper"/>
+	<context:component-scan base-package="team.skadi.javaweb.service.impl"/>
+	<context:component-scan base-package="team.skadi.javaweb.controller"/>
 	<mvc:annotation-driven/>
 	<mvc:default-servlet-handler/>
 

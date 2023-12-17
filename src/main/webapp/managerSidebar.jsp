@@ -5,6 +5,8 @@
   Time: 0:46
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.LinkedHashMap" %>
 <html>
 <body>
 <link rel="stylesheet" href="./css/sidebar.css">
@@ -12,18 +14,18 @@
 <script type="text/javascript" src="js/sidebar.js"></script>
 <div id="sidebar">
     <ul class="nav">
-        <li class="menu-item active">
-            <h>首页</h>
+
+        <% LinkedHashMap<String, String> map = new LinkedHashMap<>();
+            map.put("首页", "managerIndex.jsp");
+            map.put("用户管理", "manageReader.jsp");
+            map.put("图书管理", "manageBook.jsp");
+            map.put("账号退出", "index.jsp");
+            String activeName = request.getParameter("activeName");
+            for (String k : map.keySet()) {%>
+        <li class="menu-item<%=activeName.equals(k) ? " active" : ""%>" data-href="<%=map.get(k)%>">
+            <h><%=k%></h>
         </li>
-        <li class="menu-item">
-            <h>用户管理</h>
-        </li>
-        <li class="menu-item">
-            <h>图书管理</h>
-        </li>
-        <li class="menu-item">
-            <h>账号退出</h>
-        </li>
+        <%}%>
     </ul>
 </div>
 </body>

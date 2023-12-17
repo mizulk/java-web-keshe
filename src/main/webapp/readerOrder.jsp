@@ -17,7 +17,10 @@
 </jsp:include>
 
 <div class="container">
-    <jsp:include page="readerSidebar.jsp"/>
+    <jsp:include page="readerSidebar.jsp">
+        <jsp:param name="activeName" value="我的订单"/>
+        <jsp:param name="activeMenu" value="2"/>
+    </jsp:include>
 
     <div class="h_main">
         <div class="m_main">

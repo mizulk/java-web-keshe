@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.LinkedHashMap" %><%--
   Created by IntelliJ IDEA.
   User: null
   Date: 2023/12/16
@@ -14,24 +14,42 @@
 <script type="text/javascript" src="js/sidebar.js"></script>
 <div id="sidebar">
     <ul class="nav">
-        <li class="menu-item">
+        <%
+            String activeName = request.getParameter("activeName");
+            String activeMenu = request.getParameter("activeMenu");
+            if (activeMenu == null) activeMenu = "0";
+            LinkedHashMap<String, String> subMap1 = new LinkedHashMap<>();
+            subMap1.put("文学类", "bookKinds.jsp?search=文学类");
+            subMap1.put("历史类", "bookKinds.jsp?search=历史类");
+            subMap1.put("艺术类", "bookKinds.jsp?search=艺术类");
+            subMap1.put("外语类", "bookKinds.jsp?search=外语类");
+
+            LinkedHashMap<String, String> subMap2 = new LinkedHashMap<>();
+            subMap2.put("我的订单", "readerOrder.jsp");
+            subMap2.put("修改资料", "readerOrder.jsp");
+            subMap2.put("用户退出", "index.jsp");
+        %>
+        <li class="menu-item<%=activeName.equals("首页")?" active":""%>" data-href="readerIndex.jsp">
             <h>首页</h>
         </li>
-        <li class="menu">
+        <li class="menu<%=activeMenu.equals("1")?" active":""%>">
             <h>图书类别<span class="menu-icon">></span></h>
-            <div class="menu-content">
-                <h5 class="menu-item">文学类</h5>
-                <h5 class="menu-item">历史类</h5>
-                <h5 class="menu-item">艺术类</h5>
-                <h5 class="menu-item">外语类</h5>
+            <div class="menu-content" style="<%=activeMenu.equals("1")?"":"display:none"%>">
+                <%for (String k : subMap1.keySet()) {%>
+                <h5 class="menu-item <%=activeName.equals(k) ? " active" : ""%>" data-href="<%=subMap1.get(k)%>">
+                    <%=k%>
+                </h5>
+                <%}%>
             </div>
         </li>
-        <li class="menu">
+        <li class="menu<%=activeMenu.equals("2")?" active":""%>">
             <h>我的账户<span class="menu-icon">></span></h>
-            <div class="menu-content">
-                <h5 class="menu-item">我的订单</h5>
-                <h5 class="menu-item">修改资料</h5>
-                <h5 class="menu-item"><a href="./login.jsp">用户退出</a></h5>
+            <div class="menu-content" style="<%=activeMenu.equals("2")?"":"display:none"%>">
+                <%for (String k : subMap2.keySet()) {%>
+                <h5 class="menu-item <%=activeName.equals(k) ? " active" : ""%>" data-href="<%=subMap2.get(k)%>">
+                    <%=k%>
+                </h5>
+                <%}%>
             </div>
         </li>
     </ul>

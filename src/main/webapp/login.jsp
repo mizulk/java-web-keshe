@@ -24,10 +24,10 @@
     <div class="center">
         <div class="card-right">
             <div class="container">
-                <form action="" method="post" onsubmit="return loginCheck(this)">
+                <form action="reader-login" method="post" onsubmit="return false;">
                     <h3 class="title">用户登录</h3>
                     <span class="form-label">账号</span
-                    ><input type="text" name="username" required autocomplete="off" pattern=".{1,20}"
+                    ><input type="text" name="account" required autocomplete="off" pattern=".{1,20}"
                             placeholder="请输入你的账号"/>
                     <span class="form-label">密码</span
                     ><input type="password" name="password" required pattern=".{6,20}" placeholder="请输入你的密码"/>

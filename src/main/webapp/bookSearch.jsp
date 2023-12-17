@@ -17,7 +17,9 @@
 </jsp:include>
 
 <div class="container">
-    <jsp:include page="readerSidebar.jsp"/>
+    <jsp:include page="readerSidebar.jsp">
+        <jsp:param name="activeName" value="文学类"/>
+    </jsp:include>
 
     <div class="h_main">
         <div class="header_main">

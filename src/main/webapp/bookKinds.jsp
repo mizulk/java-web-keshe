@@ -16,7 +16,10 @@
 </jsp:include>
 
 <div class="container">
-    <jsp:include page="readerSidebar.jsp"/>
+    <jsp:include page="readerSidebar.jsp">
+        <jsp:param name="activeName" value="${param.search}"/>
+        <jsp:param name="activeMenu" value="1"/>
+    </jsp:include>
     <div class="h_main">
         <div class="header_main">
             <div class="search">

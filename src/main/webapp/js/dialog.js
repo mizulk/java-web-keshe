@@ -1,4 +1,5 @@
 $(function () {
+
     let dialog = $(".dialog");
     $("#dialog-cancel").click(function () {
         let param = $(this).data("value");
@@ -10,6 +11,7 @@ $(function () {
             dialog.fadeOut();
         }
     });
+
     $("#dialog-confirm").click(function () {
         let param = $(this).data("value");
         if (param === '') {

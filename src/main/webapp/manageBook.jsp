@@ -15,7 +15,9 @@
 <jsp:include page="header.jsp"/>
 
 <div class="container">
-    <jsp:include page="managerSidebar.jsp"/>
+    <jsp:include page="managerSidebar.jsp">
+        <jsp:param name="activeName" value="图书管理"/>
+    </jsp:include>
 
     <div class="h_main">
         <div class="header_main">
