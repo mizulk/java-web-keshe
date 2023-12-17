@@ -8,9 +8,10 @@
 <html>
 <head>
     <title>欢迎注册</title>
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="./css/background.css">
+    <link rel="stylesheet" href="./css/register.css">
     <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/axios-1.6.2.min.js"></script>
     <script type="text/javascript" src="./js/register.js"></script>
 </head>
 <body>

@@ -7,12 +7,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <title>dialog</title>
-    <link rel="stylesheet" href="./css/dialog.css">
-    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="js/dialog.js"></script>
-</head>
+<link rel="stylesheet" href="./css/dialog.css">
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="./js/dialog.js"></script>
 <body>
 <div class="dialog"
         <c:if test="${not param.showImmediately}">

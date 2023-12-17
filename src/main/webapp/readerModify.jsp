@@ -1,47 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: null
+  Date: 2023/12/17
+  Time: 15:49
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>账号修改</title>
+    <title>读者信息修改</title>
     <link rel="stylesheet" href="./css/modify.css"/>
-    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="js/sidebar.js"></script>
 </head>
-
 <body>
-<div class="user-header">
-    <div class="logo-container">
-        <img src="./img/Logo.png" alt="logo"/>
-        <span>图书销售系统</span>
-    </div>
-</div>
+<jsp:include page="header.jsp">
+    <jsp:param name="title" value="图书销售系统"/>
+</jsp:include>
 
 <div class="container">
-    <div id="sidebar">
-        <ul class="nav">
-            <li class="menu-item active">
-                <h>首页</h>
-            </li>
-            <li class="menu">
-                <h>图书类别<span class="menu-icon">></span></h>
-                <div class="menu-content">
-                    <h5 class="menu-item">文学类</h5>
-                    <h5 class="menu-item">历史类</h5>
-                    <h5 class="menu-item">艺术类</h5>
-                    <h5 class="menu-item">外语类</h5>
-                </div>
-            </li>
-            <li class="menu">
-                <h>我的账户<span class="menu-icon">></span></h>
-                <div class="menu-content">
-                    <h5 class="menu-item">我的订单</h5>
-                    <h5 class="menu-item">修改资料</h5>
-                    <h5 class="menu-item"><a href="./login.jsp">用户退出</a></h5>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <jsp:include page="readerSidebar.jsp"/>
+
     <div class="h_main">
         <div class="m_main">
             <div class="right"></div>
@@ -87,5 +63,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

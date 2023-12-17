@@ -32,7 +32,6 @@
 .m_main {
     width: 95%;
     height: 85%;
-    margin-top: 100px;
     margin: 20px auto;
     display: flex;
     justify-content: center;
@@ -42,8 +41,6 @@
 
 .tableBox {
     width: 90%;
-    height: 80%;
-    margin-top: 60px;
     margin: 40px auto;
 }
 
@@ -98,7 +95,6 @@ td {
 }
 
 .tableBox table tbody tr:hover {
-
     background: rgb(200, 200, 200);
 }
 
