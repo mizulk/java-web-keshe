@@ -11,4 +11,8 @@ public interface OrderMapper {
 	List<Order> selectAll();
 
 	void updateOrder(Order order);
+
+	@Insert("INSERT INTO orders(reader_id, book_id, amount, price) " +
+			"VALUES(#{readerId}, #{bookId}, #{amount}, #{price})")
+	void insertNewOrder(Order order);
 }

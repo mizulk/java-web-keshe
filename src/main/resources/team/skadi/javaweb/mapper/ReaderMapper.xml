@@ -30,6 +30,9 @@
             <if test="createTime != null">
                 create_time = #{createTime},
             </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
             <if test="eMail != null">
                 e_mail = #{eMail},
             </if>

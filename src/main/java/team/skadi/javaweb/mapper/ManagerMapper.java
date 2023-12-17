@@ -4,7 +4,6 @@ package team.skadi.javaweb.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 import team.skadi.javaweb.pojo.Manager;
 
 @Mapper
