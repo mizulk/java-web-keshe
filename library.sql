@@ -11,7 +11,7 @@
  Target Server Version : 80034
  File Encoding         : 65001
 
- Date: 18/12/2023 17:07:10
+ Date: 18/12/2023 21:48:34
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `books`  (
   `path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `bought` int NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 61 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of books
@@ -69,22 +69,36 @@ INSERT INTO `books` VALUES (27, '趣说中国史', '趣哥', '台海出版社', 
 INSERT INTO `books` VALUES (28, '大清十二帝', '曲波 清馨', '中国华侨出版社', 58.00, '历史类', 10, '2023-12-18 14:57:54', '2023-12-18 15:27:31', '2-13.jpg', 0);
 INSERT INTO `books` VALUES (29, '历史的镜子', '吴晗', '中国华侨出版社', 32.50, '历史类', 10, '2023-12-18 14:59:17', '2023-12-18 15:27:33', '2-14.jpg', 0);
 INSERT INTO `books` VALUES (30, '中华上下五千年', '李金龙', '吉林文史出版社', 29.80, '历史类', 10, '2023-12-18 15:00:54', '2023-12-18 15:27:36', '2-15.png', 0);
-INSERT INTO `books` VALUES (31, '中外美术史', '李林', '中国轻工业出版社', 43.80, '艺术类', 10, '2023-12-18 16:06:11', NULL, '3-1.jpg', 0);
-INSERT INTO `books` VALUES (32, '设计美学', '张玲 李正军', '人民邮电出版社', 33.50, '艺术类', 10, '2023-12-18 16:11:37', NULL, '3-2.jpg', 0);
-INSERT INTO `books` VALUES (33, '视觉传达设计', '王景 刘淼', '清华大学出版社', 52.80, '艺术类', 10, '2023-12-18 16:13:07', NULL, '3-3.jpg', 0);
-INSERT INTO `books` VALUES (34, 'MG动画设计与制作', '陈皓 李鹏', '人民邮电出版社', 59.40, '艺术类', 10, '2023-12-18 16:15:05', NULL, '3-4.jpg', 0);
-INSERT INTO `books` VALUES (35, '对立之美', '严伯钧', '中信出版社', 86.00, '艺术类', 10, '2023-12-18 16:40:39', NULL, '3-5.jpg', 0);
-INSERT INTO `books` VALUES (36, '播音主持艺考即兴评述', '谢伦浩', '中国传媒大学出版社', 30.00, '艺术类', 10, '2023-12-18 16:42:50', NULL, '3-6.jpg', 0);
-INSERT INTO `books` VALUES (37, '艺考基本功-色彩静物', '吴俊芳', '中国纺织出版社', 41.34, '艺术类', 10, '2023-12-18 16:44:59', NULL, '3-7.jpg', 0);
-INSERT INTO `books` VALUES (38, '常见玉石鉴赏', '蔡善武', '中国地质大学出版社', 18.00, '艺术类', 10, '2023-12-18 16:46:41', NULL, '3-8.jpg', 0);
-INSERT INTO `books` VALUES (39, '伟大的中国绘画', '冯翰林', '华中科技大学出版社', 89.40, '艺术类', 10, '2023-12-18 16:48:22', NULL, '3-9.jpg', 0);
-INSERT INTO `books` VALUES (40, '艺术美学', '雷礼锡', '武汉大学出版社', 18.70, '艺术类', 10, '2023-12-18 16:49:49', NULL, '3-10.jpg', 0);
-INSERT INTO `books` VALUES (41, '中国徽州雕刻艺术', '安徽美术出版社编', '安徽美术出版社', 510.00, '艺术类', 10, '2023-12-18 16:51:56', NULL, '3-11.jpg', 0);
-INSERT INTO `books` VALUES (42, '北大艺术评论', '王一川', '商务印书馆', 21.47, '艺术类', 10, '2023-12-18 16:53:24', NULL, '3-12.jpg', 0);
-INSERT INTO `books` VALUES (43, '慢的艺术', '布鲁克·麦卡拉里', '南海出版公司', 38.20, '艺术类', 10, '2023-12-18 16:54:59', NULL, '3-13.jpg', 0);
-INSERT INTO `books` VALUES (44, '包装设计', '玛丽安·罗斯奈', '上海人民美术出版社', 162.10, '艺术类', 10, '2023-12-18 16:57:05', NULL, '3-14.png', 0);
-INSERT INTO `books` VALUES (45, '中外美术史', '林木', '人民美术出版社', 25.00, '艺术类', 10, '2023-12-18 16:59:30', NULL, '3-15.jpg', 0);
-INSERT INTO `books` VALUES (46, '剑桥雅思真题精讲', '周成刚', '浙江教育出版社', 28.20, '外语类', 10, '2023-12-18 17:01:42', NULL, '4-1.jpg', 0);
+INSERT INTO `books` VALUES (31, '中外美术史', '李林', '中国轻工业出版社', 43.80, '艺术类', 10, '2023-12-18 16:06:11', '2023-12-18 17:55:27', '3-1.jpg', 0);
+INSERT INTO `books` VALUES (32, '设计美学', '张玲 李正军', '人民邮电出版社', 33.50, '艺术类', 10, '2023-12-18 16:11:37', '2023-12-18 17:55:30', '3-2.jpg', 0);
+INSERT INTO `books` VALUES (33, '视觉传达设计', '王景 刘淼', '清华大学出版社', 52.80, '艺术类', 10, '2023-12-18 16:13:07', '2023-12-18 17:55:33', '3-3.jpg', 0);
+INSERT INTO `books` VALUES (34, 'MG动画设计与制作', '陈皓 李鹏', '人民邮电出版社', 59.40, '艺术类', 10, '2023-12-18 16:15:05', '2023-12-18 17:55:36', '3-4.jpg', 0);
+INSERT INTO `books` VALUES (35, '对立之美', '严伯钧', '中信出版社', 86.00, '艺术类', 10, '2023-12-18 16:40:39', '2023-12-18 17:55:39', '3-5.jpg', 0);
+INSERT INTO `books` VALUES (36, '播音主持艺考即兴评述', '谢伦浩', '中国传媒大学出版社', 30.00, '艺术类', 10, '2023-12-18 16:42:50', '2023-12-18 17:55:42', '3-6.jpg', 0);
+INSERT INTO `books` VALUES (37, '艺考基本功-色彩静物', '吴俊芳', '中国纺织出版社', 41.34, '艺术类', 10, '2023-12-18 16:44:59', '2023-12-18 17:55:45', '3-7.jpg', 0);
+INSERT INTO `books` VALUES (38, '常见玉石鉴赏', '蔡善武', '中国地质大学出版社', 18.00, '艺术类', 10, '2023-12-18 16:46:41', '2023-12-18 17:55:47', '3-8.jpg', 0);
+INSERT INTO `books` VALUES (39, '伟大的中国绘画', '冯翰林', '华中科技大学出版社', 89.40, '艺术类', 10, '2023-12-18 16:48:22', '2023-12-18 17:55:50', '3-9.jpg', 0);
+INSERT INTO `books` VALUES (40, '艺术美学', '雷礼锡', '武汉大学出版社', 18.70, '艺术类', 10, '2023-12-18 16:49:49', '2023-12-18 17:55:52', '3-10.jpg', 0);
+INSERT INTO `books` VALUES (41, '中国徽州雕刻艺术', '安徽美术出版社编', '安徽美术出版社', 510.00, '艺术类', 10, '2023-12-18 16:51:56', '2023-12-18 17:55:54', '3-11.jpg', 0);
+INSERT INTO `books` VALUES (42, '北大艺术评论', '王一川', '商务印书馆', 21.47, '艺术类', 10, '2023-12-18 16:53:24', '2023-12-18 17:55:57', '3-12.jpg', 0);
+INSERT INTO `books` VALUES (43, '慢的艺术', '布鲁克·麦卡拉里', '南海出版公司', 38.20, '艺术类', 10, '2023-12-18 16:54:59', '2023-12-18 17:55:59', '3-13.jpg', 0);
+INSERT INTO `books` VALUES (44, '包装设计', '玛丽安·罗斯奈', '上海人民美术出版社', 162.10, '艺术类', 10, '2023-12-18 16:57:05', '2023-12-18 17:56:03', '3-14.png', 0);
+INSERT INTO `books` VALUES (45, '中外美术史', '林木', '人民美术出版社', 25.00, '艺术类', 10, '2023-12-18 16:59:30', '2023-12-18 17:56:05', '3-15.jpg', 0);
+INSERT INTO `books` VALUES (46, '剑桥雅思真题精讲', '周成刚', '浙江教育出版社', 28.20, '外语类', 10, '2023-12-18 17:01:42', '2023-12-18 17:56:07', '4-1.jpg', 0);
+INSERT INTO `books` VALUES (47, '专四词汇', '新东方考试研究中心', '浙江教育出版社', 26.60, '外语类', 10, '2023-12-18 17:24:03', '2023-12-18 17:56:11', '4-2.jpg', 0);
+INSERT INTO `books` VALUES (48, '四级词汇', '新东方考试研究中心', '浙江教育出版社', 28.00, '外语类', 10, '2023-12-18 17:25:42', '2023-12-18 17:56:15', '4-3.jpg', 0);
+INSERT INTO `books` VALUES (49, 'IELTS 13', '剑桥大学考试委员会', '海外版', 97.52, '外语类', 10, '2023-12-18 17:27:49', '2023-12-18 17:56:17', '4-4.jpg', 0);
+INSERT INTO `books` VALUES (50, '英语词汇速记大全', '俞敏洪', '世界图书出版公司', 40.00, '外语类', 10, '2023-12-18 17:30:15', '2023-12-18 17:56:19', '4-5.jpg', 0);
+INSERT INTO `books` VALUES (51, '英语电影视听说', '徐志英', '外语教学与研究出版社', 37.50, '外语类', 10, '2023-12-18 17:32:35', '2023-12-18 17:56:21', '4-6.jpg', 0);
+INSERT INTO `books` VALUES (52, '新概念英语词汇大全', '于洋', '外语教学与研究出版社', 4.62, '外语类', 10, '2023-12-18 17:33:59', '2023-12-18 17:56:23', '4-7.jpg', 0);
+INSERT INTO `books` VALUES (53, '药用拉丁语', '孙启时', '中国医药科技出版社', 34.50, '外语类', 10, '2023-12-18 17:35:42', '2023-12-18 17:56:26', '4-8.jpg', 0);
+INSERT INTO `books` VALUES (54, '英语报刊选读', '张卫平', '外语教学与研究出版社', 29.70, '外语类', 10, '2023-12-18 17:37:12', '2023-12-18 17:56:28', '4-9.jpg', 0);
+INSERT INTO `books` VALUES (55, '法律英语教程', '宋雷', '外国教育与研究出版社', 38.20, '外语类', 10, '2023-12-18 17:38:27', '2023-12-18 17:56:30', '4-10.jpg', 0);
+INSERT INTO `books` VALUES (56, '5000英语短语', '耿小辉', '中国对外翻译出版公司', 59.00, '外语类', 10, '2023-12-18 17:40:55', '2023-12-18 17:56:33', '4-11.jpg', 0);
+INSERT INTO `books` VALUES (57, '全国职称英语', '考试命题研究组', '辽宁大学出版社', 19.80, '外语类', 10, '2023-12-18 17:50:19', '2023-12-18 17:56:35', '4-12.png', 0);
+INSERT INTO `books` VALUES (58, '商务德语教程', '蔡明剑', '外语教学与研究出版社', 20.10, '外语类', 10, '2023-12-18 17:51:45', '2023-12-18 17:56:37', '4-13.jpg', 0);
+INSERT INTO `books` VALUES (59, '金融英语教程', '沈素萍', '外语教学与研究出版社', 26.70, '外语类', 10, '2023-12-18 17:53:22', '2023-12-18 17:56:39', '4-14.jpg', 0);
+INSERT INTO `books` VALUES (60, '超实用外企英语面试', '有元美津世', '浙江教育出版社', 26.00, '外语类', 10, '2023-12-18 17:55:17', '2023-12-18 17:56:41', '4-15.jpg', 0);
 
 -- ----------------------------
 -- Table structure for managers
@@ -96,7 +110,7 @@ CREATE TABLE `managers`  (
   `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `name` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of managers
@@ -115,7 +129,7 @@ CREATE TABLE `orders`  (
   `price` decimal(10, 2) NOT NULL,
   `order_time` datetime(0) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of orders
@@ -139,11 +153,17 @@ CREATE TABLE `readers`  (
   `e_mail` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `remark` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of readers
 -- ----------------------------
 INSERT INTO `readers` VALUES (1, '123456', '123456', 'otto', 0, '123456', '2023-12-17 18:59:13', '123456', '2023-12-17 18:59:18', NULL, '13456', '123456');
+
+-- ----------------------------
+-- View structure for my_order
+-- ----------------------------
+DROP VIEW IF EXISTS `my_order`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `my_order` AS select `readers`.`name` AS `reader_name`,`orders`.`id` AS `order_id`,`books`.`book_name` AS `book_name`,`books`.`id` AS `book_id`,`books`.`price` AS `book_price`,`orders`.`order_time` AS `order_time`,`orders`.`amount` AS `order_amount`,`readers`.`id` AS `reader_id` from ((`readers` join `orders` on((`readers`.`id` = `orders`.`reader_id`))) join `books` on((`orders`.`book_id` = `books`.`id`)));
 
 SET FOREIGN_KEY_CHECKS = 1;

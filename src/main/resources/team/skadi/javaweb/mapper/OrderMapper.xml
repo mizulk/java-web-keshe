@@ -28,4 +28,34 @@
             </when>
         </choose>
     </update>
+
+    <select id="page" resultType="team.skadi.javaweb.pojo.MyOrder">
+        SELECT * FROM my_order
+        <where>
+            <if test="readerName != null">
+                reader_name = #{readerName}
+            </if>
+            <if test="orderId != null">
+                AND order_id = #{orderId}
+            </if>
+            <if test="bookName != null">
+                AND book_name = #{bookName}
+            </if>
+            <if test="bookId != null">
+                AND book_id = #{bookId}
+            </if>
+            <if test="bookPrice != null">
+                AND book_price = #{bookPrice}
+            </if>
+            <if test="orderTime != null">
+                AND order_time = #{orderTime}
+            </if>
+            <if test="orderAmount != null">
+                AND order_amount = #{orderAmount}
+            </if>
+            <if test="readerId != null">
+                AND reader_id = #{readerId}
+            </if>
+        </where>
+    </select>
 </mapper>
