@@ -28,7 +28,13 @@
 				create_time = #{createTime},
 			</if>
 			<if test="updateTime != null">
-				update_time = #{updateTime}
+				update_time = #{updateTime},
+			</if>
+			<if test="path != null">
+				path = #{path},
+			</if>
+			<if test="bought != null">
+				bought = #{bought}
 			</if>
 		</set>
 		<choose>

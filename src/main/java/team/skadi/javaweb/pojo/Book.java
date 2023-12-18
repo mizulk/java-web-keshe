@@ -19,4 +19,6 @@ public class Book {
 	private Integer repertory;
 	private LocalDateTime createTime;
 	private LocalDateTime updateTime;
+	private String path;
+	private Integer bought;
 }
