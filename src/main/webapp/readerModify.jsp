@@ -26,24 +26,37 @@
             <div class="right"></div>
             <div class="left">
                 <div class="modify-container">
-                    <form>
+                    <form action="modifyReader" method="post">
                         <h2 class="title">账号修改</h2>
                         <span>账号</span
-                        ><input type="text" name="account" placeholder="请输入账号"/>
+                        ><input
+                            type="text"
+                            name="account"
+                            placeholder="请输入账号"
+                            value="${sessionScope.get("reader").getAccount()}"
+                            readonly
+                    />
                         <span>用户名</span
                         ><input
                             type="text"
-                            name="username"
-                            placeholder="请输入用户名1~20位"
+                            name="name"
+                            placeholder="请输入用户名1~20位" ,
+                            value="${sessionScope.get("reader").getName()}"
                     />
                         <span>旧密码</span
                         ><input
                             type="password"
                             name="oldpassword"
                             placeholder="请输入旧密码"
+                            value="${sessionScope.get("reader").getPassword()}"
                     />
                         <span>手机号</span
-                        ><input type="tel" name="tel" placeholder="请输入手机号"/>
+                        ><input
+                            type="tel"
+                            name="tel"
+                            placeholder="请输入手机号"
+                            value="${sessionScope.get("reader").getTelephone()}"
+                    />
                         <span>新密码</span
                         ><input
                             type="password"
@@ -57,8 +70,19 @@
                             placeholder="请再输入新密码"
                     />
                         <span>邮箱</span
-                        ><input type="email" name="email" placeholder="xxx@xxx.com"/>
-                        <span>备注</span><input type="notes" name="notes"/>
+                        ><input
+                            type="email"
+                            name="email"
+                            placeholder="xxx@xxx.com"
+                            value="${sessionScope.get("reader").getEMail()}"
+                    />
+                        <span>备注</span
+                        ><input
+                            type="notes"
+                            name="notes"
+                            value="${sessionScope.get("reader").getRemark()}"
+                            readonly
+                    />
                         <span></span><input type="submit"/>
                     </form>
                 </div>

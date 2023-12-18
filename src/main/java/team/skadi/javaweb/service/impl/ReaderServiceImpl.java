@@ -7,6 +7,7 @@ import team.skadi.javaweb.pojo.Reader;
 import team.skadi.javaweb.service.ReaderService;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class ReaderServiceImpl implements ReaderService {
@@ -20,15 +21,31 @@ public class ReaderServiceImpl implements ReaderService {
 	}
 
 	@Override
-	public void register(Reader reader) {
+	public boolean register(Reader reader) {
 		reader.setCreateTime(LocalDateTime.now());
-		readerMapper.insertNewReader();
+		reader.setUpdateTime(LocalDateTime.now());
+		return readerMapper.insertNewReader(reader) > 0;
 	}
 
 	@Override
 	public void modifyReader(Reader reader) {
 		reader.setUpdateTime(LocalDateTime.now());
 		readerMapper.updateReader(reader);
+	}
+
+	@Override
+	public Reader getUserById(Integer id) {
+		return readerMapper.selectReaderById(id);
+	}
+
+	@Override
+	public List<Reader> queryAllUser() {
+		return readerMapper.selectAll();
+	}
+
+	@Override
+	public boolean delReader(Integer id) {
+		return readerMapper.delReaderById(id) > 0;
 	}
 
 

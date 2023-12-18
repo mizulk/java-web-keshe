@@ -6,12 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>用户首页</title>
     <link rel="stylesheet" href="./css/index.css"/>
+    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/showBookDialog.js"></script>
 </head>
 <body>
+<div id="user-id" style="display: none" data-readerid="${sessionScope.get("reader").getId()}"></div>
+<jsp:include page="bookDialog.jsp"/>
+
 <jsp:include page="header.jsp">
     <jsp:param name="title" value="图书销售系统"/>
 </jsp:include>
@@ -24,7 +30,7 @@
     <div class="h_main">
         <div class="header_main">
             <div class="search">
-                <form action="">
+                <form action="searchBook">
                     <input
                             type="text"
                             name="search"
@@ -37,21 +43,32 @@
                 </form>
             </div>
         </div>
-        <div class="adv2 main">
-            <div>adv2_1</div>
-            <div>adv2_2</div>
-            <div>adv2_3</div>
-            <div>adv2_4</div>
-            <div>adv2_5</div>
-            <div>adv2_6</div>
-            <div>adv2_7</div>
-            <div>adv2_8</div>
-            <div>adv2_9</div>
-            <div>adv2_10</div>
-            <div>adv2_11</div>
-        </div>
+        <c:if test="${requestScope.books.size() != 0}">
+            <div class="adv2 main">
+                <div class="adv2-first"></div>
+                <c:forEach items="${requestScope.books}" var="book">
+                    <div class="book" data-id="${book.getId()}">
+                        <img src="./img/books/${book.getPath()}" alt="book">
+                        <div class="book-info">
+                            <h2 class=".book-name">
+                                    ${book.getBookName()}
+                            </h2>
+                            <div class="book-grid">
+                                <div class="book-price">${book.getPrice()}￥</div>
+                                <div class="publisher">${book.getPublisher()}</div>
+                                <div class="book-author">${book.getAuthor()}</div>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </c:if>
+        <c:if test="${requestScope.books.size() eq 0}">
+            <h1 style="flex-grow: 1">
+                未找到相应的图书
+            </h1>
+        </c:if>
     </div>
-</div>
 </div>
 </body>
 </html>

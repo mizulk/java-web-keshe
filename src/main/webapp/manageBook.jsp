@@ -22,7 +22,7 @@
     <div class="h_main">
         <div class="header_main">
             <div class="search">
-                <form action="">
+                <form action="searchBook">
                     <input
                             type="text"
                             name="search"

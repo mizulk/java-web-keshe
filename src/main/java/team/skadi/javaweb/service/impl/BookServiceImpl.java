@@ -7,6 +7,7 @@ import team.skadi.javaweb.pojo.Book;
 import team.skadi.javaweb.service.BookService;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -24,5 +25,25 @@ public class BookServiceImpl implements BookService {
 	public void addNewBook(Book book) {
 		book.setCreateTime(LocalDateTime.now());
 		bookMapper.insertNewBook(book);
+	}
+
+	@Override
+	public List<Book> queryBooksByType(String bookType) {
+		return bookMapper.selectBooksByType(bookType);
+	}
+
+	@Override
+	public List<Book> queryBooksByName(String bookName) {
+		return bookMapper.selectBooksByName(bookName);
+	}
+
+	@Override
+	public List<Book> queryPopularBook() {
+		return bookMapper.selectBooks();
+	}
+
+	@Override
+	public Book queryBookById(Integer bookId) {
+		return bookMapper.selectBookById(bookId);
 	}
 }

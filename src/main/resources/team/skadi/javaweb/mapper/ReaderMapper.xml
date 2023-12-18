@@ -6,9 +6,6 @@
     <update id="updateReader">
         UPDATE readers
         <set>
-            <if test="account != null">
-                account = #{account},
-            </if>
             <if test="password != null">
                 password = #{password},
             </if>
@@ -44,6 +41,9 @@
             <when test="id != null">
                 WHERE id = #{id}
             </when>
+	        <otherwise>
+		        WHERE account = #{account}
+	        </otherwise>
         </choose>
     </update>
 </mapper>

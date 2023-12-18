@@ -20,7 +20,11 @@
 .right {
     width: 40%;
     height: 100%;
-    background-color: #FFFF00;
+    background: linear-gradient(
+            120deg,
+            #e0c3fc 0%,
+            #8ec5fc 100%
+    ) no-repeat;
     float: right;
 }
 

@@ -19,17 +19,17 @@
             String activeMenu = request.getParameter("activeMenu");
             if (activeMenu == null) activeMenu = "0";
             LinkedHashMap<String, String> subMap1 = new LinkedHashMap<>();
-            subMap1.put("文学类", "bookKinds.jsp?search=文学类");
-            subMap1.put("历史类", "bookKinds.jsp?search=历史类");
-            subMap1.put("艺术类", "bookKinds.jsp?search=艺术类");
-            subMap1.put("外语类", "bookKinds.jsp?search=外语类");
+            subMap1.put("文学类", "bookType?type=文学类");
+            subMap1.put("历史类", "bookType?type=历史类");
+            subMap1.put("艺术类", "bookType?type=艺术类");
+            subMap1.put("外语类", "bookType?type=外语类");
 
             LinkedHashMap<String, String> subMap2 = new LinkedHashMap<>();
-            subMap2.put("我的订单", "readerOrder.jsp");
-            subMap2.put("修改资料", "readerOrder.jsp");
-            subMap2.put("用户退出", "index.jsp");
+            subMap2.put("我的订单", "readerOrder");
+            subMap2.put("修改资料", "readerModify.jsp");
+            subMap2.put("用户退出", "readerLogout");
         %>
-        <li class="menu-item<%=activeName.equals("首页")?" active":""%>" data-href="readerIndex.jsp">
+        <li class="menu-item<%=activeName.equals("首页")?" active":""%>" data-href="readerIndex">
             <h>首页</h>
         </li>
         <li class="menu<%=activeMenu.equals("1")?" active":""%>">

@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import url("./readerMain.css");
+@import url("./book.css");
 
 .header_main {
     height: 80px;
@@ -38,29 +39,9 @@
     margin-top: 14px;
 }
 
-.adv2 > *:not(:first-child) {
-    background-image: url("https://img11.360buyimg.com/n7/jfs/t7957/227/2622689294/461159/86a7443e/59b22e50N6e1d836e.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 290px;
-}
-
-.adv2 > *,
-.adv2 div:first-child {
-    background: cyan;
-    cursor: pointer;
-    transition: all .2s;
-}
-
-.adv2 > div:hover {
-    z-index: 2;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
-    transform: translate3d(0, -2px, 0);
-}
-
-/* 设置第一个子div的样式*/
-.adv2 div:first-child {
+.adv2 .adv2-first {
     grid-row-start: 1;
     grid-row-end: 3;
+    cursor: pointer;
+    background-image: url("../img/userindex.jpg");
 }

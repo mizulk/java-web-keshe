@@ -6,12 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>图书检索结果</title>
     <link rel="stylesheet" href="./css/table.css">
+    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/bookSearch.js"></script>
 </head>
 <body>
+<div id="user-id" style="display: none" data-readerid="${sessionScope.get("reader").getId()}"></div>
 <jsp:include page="header.jsp">
     <jsp:param name="title" value="图书销售系统"/>
 </jsp:include>
@@ -24,7 +28,7 @@
     <div class="h_main">
         <div class="header_main">
             <div class="search">
-                <form action="">
+                <form action="searchBook">
                     <input type="text" name="search" id="search" placeholder="图书搜索"/>
                     <button class="iconfront"><img src="./img/search.png" height="45px" alt=""></button>
                 </form>
@@ -45,23 +49,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <%
-                        for (int i = 0; i < 15; i++) {
-                    %>
-                    <tr>
-                        <td>小王子</td>
-                        <td>123456</td>
-                        <td>文学类</td>
-                        <td>15</td>
-                        <td>高等教育出版社</td>
-                        <td>123</td>
-                        <td>
-                            <button class="purchase">购买</button>&nbsp;&nbsp;
-                        </td>
-                    </tr>
-                    <%
-                        }
-                    %>
+                    <c:forEach items="${requestScope.books}" var="book">
+                        <tr>
+                            <td>${book.getBookName()}</td>
+                            <td>${book.getId()}</td>
+                            <td>${book.getBookType()}</td>
+                            <td>${book.getPrice()}</td>
+                            <td>${book.getPublisher()}</td>
+                            <td>${book.getRepertory()}</td>
+                            <td>
+                                <button class="purchase" data-id="${book.getId()}">购买</button>&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

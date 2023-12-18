@@ -11,8 +11,18 @@
 	<context:component-scan base-package="team.skadi.javaweb.mapper"/>
 	<context:component-scan base-package="team.skadi.javaweb.service.impl"/>
 	<context:component-scan base-package="team.skadi.javaweb.controller"/>
-	<mvc:annotation-driven/>
 	<mvc:default-servlet-handler/>
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean id="fastJsonConverters" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driver}"/>
@@ -24,6 +34,7 @@
 		<property name="idleTimeout" value="30000"/>
 		<property name="maximumPoolSize" value="16"/>
 		<property name="maxLifetime" value="1800000"/>
+		<property name="minimumIdle" value="1"/>
 	</bean>
 
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">

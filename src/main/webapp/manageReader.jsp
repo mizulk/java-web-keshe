@@ -6,10 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>用户管理</title>
     <link rel="stylesheet" href="./css/table.css"/>
+    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/manageReader.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -22,7 +25,7 @@
     <div class="h_main">
         <div class="header_main">
             <div class="search">
-                <form action="">
+                <form action="searchBook">
                     <input
                             type="text"
                             name="search"
@@ -49,23 +52,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <%
-                        for (int i = 0; i < 25; i++){
-                    %>
-                    <tr>
-                        <td>杨华杰</td>
-                        <td>123456</td>
-                        <td>789123</td>
-                        <td>1912580369</td>
-                        <td>123@qq.com</td>
-                        <td>
-                            <button class="edit">修改</button>&nbsp;&nbsp;
-                            <button class="delete">删除</button>
-                        </td>
-                    </tr>
-                    <%
-                        }
-                    %>
+                    <c:forEach items="${requestScope.readers}" var="reader">
+                        <tr class="book-${reader.getId()}">
+                            <td>${reader.getName()}</td>
+                            <td>${reader.getAccount()}</td>
+                            <td>${reader.getPassword()}</td>
+                            <td>${reader.getTelephone()}</td>
+                            <td>${reader.getEMail()}</td>
+                            <td>
+                                <button class="edit" data-id="${reader.getId()}">修改</button>&nbsp;&nbsp;
+                                <button class="delete" data-id="${reader.getId()}">删除</button>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

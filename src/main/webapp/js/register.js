@@ -8,5 +8,5 @@ function registerCheck(form) {
         $(".dialog").fadeIn();
         return false;
     }
-    return false;
+    return true;
 }

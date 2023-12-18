@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>用户订单</title>
@@ -38,21 +39,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <%
-                        for (int i = 0;i < 20;i ++){
-                    %>
-                    <tr>
-                        <td>马冬梅</td>
-                        <td>123456</td>
-                        <td>天外飞仙</td>
-                        <td>123-456</td>
-                        <td>18.88</td>
-                        <td>2023.12.14</td>
-                        <td>1</td>
-                    </tr>
-                    <%
-                        }
-                    %>
+                    <c:forEach items="${requestScope.orders}" var="order">
+                        <tr>
+                            <td>${order.getReaderName()}</td>
+                            <td>${order.getOrderId()}</td>
+                            <td>${order.getBookName()}</td>
+                            <td>${order.getBookId()}</td>
+                            <td>${order.getBookPrice()}</td>
+                            <td>${order.getOrderTime()}</td>
+                            <td>${order.getOrderAmount()}</td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

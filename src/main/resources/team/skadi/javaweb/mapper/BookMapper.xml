@@ -12,7 +12,7 @@
 			<if test="author != null">
 				author = #{author},
 			</if>
-			<if test="publisher != mull">
+			<if test="publisher != null">
 				publisher = #{publisher},
 			</if>
 			<if test="price != null">

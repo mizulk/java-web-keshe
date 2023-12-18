@@ -15,9 +15,6 @@
     <script type="text/javascript" src="./js/register.js"></script>
 </head>
 <body>
-<%
-    request.setCharacterEncoding("utf-8");
-%>
 <jsp:include page="logo.jsp"/>
 <jsp:include page="dialog.jsp">
     <jsp:param name="showImmediately" value="false"/>
@@ -31,10 +28,10 @@
         </div>
         <div class="card-right">
             <div class="container">
-                <form action="" method="post" onsubmit="return registerCheck(this)">
+                <form action="readerRegister" method="post" onsubmit="return registerCheck(this)">
                     <h3 class="title">用户注册</h3>
                     <span class="form-label">账号</span
-                    ><input type="text" name="username" required autocomplete="off" placeholder="1~20长度的的账户"/>
+                    ><input type="text" name="account" required autocomplete="off" placeholder="1~20长度的的账户"/>
                     <span class="form-label">手机号</span
                     ><input type="tel" name="tel" required pattern="\d{11}" autocomplete="off" placeholder="请输入你的手机号"/>
                     <span class="form-label">密码</span

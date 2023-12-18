@@ -17,9 +17,9 @@
 
         <% LinkedHashMap<String, String> map = new LinkedHashMap<>();
             map.put("首页", "managerIndex.jsp");
-            map.put("用户管理", "manageReader.jsp");
+            map.put("用户管理", "getAllReader");
             map.put("图书管理", "manageBook.jsp");
-            map.put("账号退出", "index.jsp");
+            map.put("账号退出", "managerLogout");
             String activeName = request.getParameter("activeName");
             for (String k : map.keySet()) {%>
         <li class="menu-item<%=activeName.equals(k) ? " active" : ""%>" data-href="<%=map.get(k)%>">

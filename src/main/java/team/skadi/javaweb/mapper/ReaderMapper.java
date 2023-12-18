@@ -10,13 +10,18 @@ public interface ReaderMapper {
 	@Select("SELECT * FROM readers;")
 	List<Reader> selectAll();
 
-	String updateReader(Reader reader);
+	void updateReader(Reader reader);
 
 	@Select("SELECT * FROM readers WHERE `account`=#{account} AND `password`=#{password}")
 	Reader selectReaderByAccountAndPassword(@Param("account") String account, @Param("password") String password);
 
-	@Insert("INSERT INTO readers(`account`, `password`, `name`, sex, telephone, birth, address, e_mail, remark)" +
-			"VALUES(#{account}, #{password}, #{name}, #{sex}, #{telephone}, #{birth}, #{address}, #{eMail}, #{remark})")
-	String insertNewReader();
+	@Insert("INSERT INTO readers(`account`, `password`, telephone, create_time, update_time)" +
+			"VALUES(#{account}, #{password}, #{telephone}, #{createTime}, #{updateTime})")
+	int insertNewReader(Reader reader);
 
+	@Select("SELECT * FROM readers WHERE id = #{id}")
+	Reader selectReaderById(@Param("id") Integer id);
+
+	@Delete("DELETE FROM readers WHERE id = #{id}")
+	int delReaderById(@Param("id") Integer id);
 }

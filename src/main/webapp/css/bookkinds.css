@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import url("./readerMain.css");
+@import url("./book.css");
 
 .header_main {
     height: 80px;
@@ -28,14 +29,8 @@
     cursor: pointer;
 }
 
-.adv1 {
-    background: #ffff00;
-    height: 250px;
-    margin-top: 10px;
-}
-
 .adv3 {
-    background: red;
+    background: #fff;
     height: 80px;
     margin-top: 10px;
 }
@@ -49,7 +44,5 @@
     grid-template-rows: repeat(auto-fill, 290px);
 }
 
-.adv2 > * {
-    background: cyan;
-    height: 290px;
-}
+
+

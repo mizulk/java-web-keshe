@@ -24,7 +24,7 @@
     <div class="center">
         <div class="card-right">
             <div class="container">
-                <form action="reader-login" method="post" onsubmit="return false;">
+                <form action="" method="post" onsubmit="return loginCheck(this)">
                     <h3 class="title">用户登录</h3>
                     <span class="form-label">账号</span
                     ><input type="text" name="account" required autocomplete="off" pattern=".{1,20}"

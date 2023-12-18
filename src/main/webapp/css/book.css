@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.book {
+    background: white;
+    height: 290px;
+    width: 220px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.book:hover{
+    z-index: 2;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    transform: translate3d(0, -2px, 0);
+}
+
+.book-name {
+    height: 50%;
+}
+
+.book > img {
+    width: 100%;
+    height: 220px;
+}
+
+.book .book-grid {
+    display: grid;
+    height: 50%;
+    grid-template-columns: 1fr .3fr;
+}
+
+.book-info {
+    height: 70px;
+    margin: 0 4px;
+}
+
+.book-grid > div:not(.book-price) {
+    font-size: small;
+    text-align: left;
+}
+
+.book-grid > .book-price {
+    text-align: center;
+    line-height: 35px;
+    font-size: large;
+    color: #ff6600;
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
