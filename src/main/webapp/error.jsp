@@ -15,7 +15,7 @@
 </head>
 <body>
 <jsp:include page="logo.jsp"/>
-<div class="dialog">
+<div class="dialog-wrapper">
     <h2 class="dialog-title">错误</h2>
     <p class="dialog-content">
         ${requestScope.msg}

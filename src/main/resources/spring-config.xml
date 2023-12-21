@@ -32,7 +32,7 @@
 		<property name="autoCommit" value="true"/>
 		<property name="connectionTimeout" value="30000"/>
 		<property name="idleTimeout" value="30000"/>
-		<property name="maximumPoolSize" value="16"/>
+		<property name="maximumPoolSize" value="10"/>
 		<property name="maxLifetime" value="1800000"/>
 		<property name="minimumIdle" value="1"/>
 	</bean>

@@ -5,6 +5,7 @@
 
 .bg {
     height: 100vh;
+    min-height: 650px;
     min-width: 900px;
     overflow: hidden;
     display: flex;
@@ -59,7 +60,6 @@
 
 .container {
     width: 400px;
-    font-family: "微软雅黑", serif;
     margin-left: 60px;
 }
 

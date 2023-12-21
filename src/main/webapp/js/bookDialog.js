@@ -1,5 +1,5 @@
 $(function (){
-    let dialog = $(".dialog");
+    let dialog = $(".dialog-wrapper");
 
     $("#dialog-cancel").click(function () {
         dialog.hide();

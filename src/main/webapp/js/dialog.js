@@ -1,6 +1,6 @@
 $(function () {
 
-    let dialog = $(".dialog");
+    let dialog = $(".dialog-wrapper");
     $("#dialog-cancel").click(function () {
         let param = $(this).data("value");
         if (param === '') {

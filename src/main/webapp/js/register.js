@@ -5,7 +5,7 @@
 function registerCheck(form) {
     if (form.password.value !== form.confirmpsw.value) {
         $(".dialog-content").text("两次输入的密码不相同");
-        $(".dialog").fadeIn();
+        $(".dialog-wrapper").fadeIn();
         return false;
     }
     return true;

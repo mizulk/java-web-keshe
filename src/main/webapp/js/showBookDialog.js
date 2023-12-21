@@ -1,5 +1,5 @@
 $(function () {
-    let dialog = $(".dialog");
+    let dialog = $(".dialog-wrapper");
     let book_id;
 
     $(".book").click(function () {

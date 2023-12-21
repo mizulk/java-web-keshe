@@ -9,11 +9,15 @@ public interface ReaderService {
 
 	boolean register(Reader reader);
 
-	void modifyReader(Reader reader);
+	boolean modifyReader(Reader reader);
 
 	Reader getUserById(Integer id);
+
+	Reader getUserByAccount(String account);
 
 	List<Reader> queryAllUser();
 
 	boolean delReader(Integer id);
+
+	boolean addReader(Reader reader);
 }

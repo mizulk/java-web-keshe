@@ -28,14 +28,19 @@ public class ReaderServiceImpl implements ReaderService {
 	}
 
 	@Override
-	public void modifyReader(Reader reader) {
+	public boolean modifyReader(Reader reader) {
 		reader.setUpdateTime(LocalDateTime.now());
-		readerMapper.updateReader(reader);
+		return readerMapper.updateReader(reader) > 0;
 	}
 
 	@Override
 	public Reader getUserById(Integer id) {
 		return readerMapper.selectReaderById(id);
+	}
+
+	@Override
+	public Reader getUserByAccount(String account) {
+		return readerMapper.selectReaderByAccount(account);
 	}
 
 	@Override
@@ -46,6 +51,11 @@ public class ReaderServiceImpl implements ReaderService {
 	@Override
 	public boolean delReader(Integer id) {
 		return readerMapper.delReaderById(id) > 0;
+	}
+
+	@Override
+	public boolean addReader(Reader reader) {
+		return readerMapper.addNewReader(reader) > 0;
 	}
 
 

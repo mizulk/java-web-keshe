@@ -13,10 +13,10 @@ public interface BookMapper {
 
 	List<Book> page(Book book);
 
-	void updateBook(Book book);
+	int updateBook(Book book);
 
-	@Insert("INSERT INTO books(book_name, author, publisher, price, book_type, repertory, create_time) " +
-			"VALUES(#{bookName}, #{author}, #{publisher}, #{price}, #{bookType}, #{repertory}, #{createTime})")
+	@Insert("INSERT INTO books(book_name, author, publisher, price, book_type, `path`, create_time, update_time) " +
+			"VALUES(#{bookName}, #{author}, #{publisher}, #{price}, #{bookType}, #{path}, #{createTime}, #{updateTime})")
 	void insertNewBook(Book book);
 
 	@Select("SELECT * FROM books WHERE book_type = #{bookType}")
@@ -30,4 +30,8 @@ public interface BookMapper {
 
 	@Select("SELECT * FROM books WHERE id = #{id}")
 	Book selectBookById(@Param("id") Integer id);
+
+
+	@Delete("DELETE FROM books WHERE id = #{id}")
+	int delBookById(@Param("id") Integer id);
 }

@@ -23,7 +23,7 @@ public class ReaderController {
 	private ReaderService readerService;
 
 	@RequestMapping("/modifyReader")
-	public void modifyReader(
+	public Result modifyReader(
 			String account,
 			String name,
 			String oldPassword,
@@ -32,21 +32,25 @@ public class ReaderController {
 			String confirmpsw,
 			String email,
 			String notes,
-			HttpServletResponse response
-	) throws IOException {
-		Reader reader = new Reader();
-		reader.setAccount(account);
-		reader.setName(name);
-		reader.setTelephone(tel);
-		if (newpassword != null && !newpassword.equals(""))
-			reader.setPassword(newpassword);
-		reader.setEMail(email);
-		reader.setRemark(notes);
-		log.debug("Modify reader, new value: {}", reader);
-		readerService.modifyReader(reader);
-		response.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8;");
-		response.getWriter().print("<script>alert('修改成功');window.history.go(-1);</script>");
+			HttpServletRequest request
+	) {
+
+		Reader reader1 = readerService.getUserByAccount(account);
+
+		if (request.getSession().getAttribute("reader") instanceof Reader
+				&& !reader1.getPassword().equals(oldPassword))
+			return Result.error(400, "密码错误");
+
+		reader1.setName(name);
+		reader1.setTelephone(tel);
+		if (newpassword != null && !newpassword.equals("")) {
+			reader1.setPassword(newpassword);
+		}
+		reader1.setEMail(email);
+		reader1.setRemark(notes);
+		log.debug("Modify reader, new value: {}", reader1);
+		boolean b = readerService.modifyReader(reader1);
+		return b ? Result.ok(reader1) : Result.error(410, "error");
 	}
 
 	@RequestMapping("/getReader")
@@ -67,8 +71,26 @@ public class ReaderController {
 
 	@RequestMapping("/delReader")
 	public Result delReader(Integer id) {
-//		boolean b = readerService.delReader(id);
-		boolean b = true;
-		return b ? Result.ok(null) : Result.error(404, "删除失败");
+		return readerService.delReader(id) ? Result.ok(null) : Result.error(404, "删除失败");
+	}
+
+	@RequestMapping("/addReader")
+	public Result addReader(
+			String account,
+			String password,
+			String name,
+			String tel,
+			String email,
+			String notes
+	) {
+		Reader reader = new Reader();
+		reader.setAccount(account);
+		reader.setPassword(password);
+		reader.setName(name);
+		reader.setTelephone(tel);
+		reader.setEMail(email);
+		reader.setRemark(notes);
+
+		return readerService.addReader(reader) ? Result.ok(null) : Result.error(500, "error");
 	}
 }

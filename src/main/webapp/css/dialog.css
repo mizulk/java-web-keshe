@@ -3,10 +3,23 @@
 @import url("./base.css");
 @import url("./basic-button.css");
 
-div.dialog {
+div.dialog-wrapper,
+div.dialog-reader-wrapper,
+div.dialog-book-wrapper {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    min-height: 220px;
+    min-width: 420px;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 998;
+    display: inline-block;
+}
+
+div.dialog-main {
     min-width: 420px;
     min-height: 220px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -19,12 +32,12 @@ div.dialog {
     background-color: #fff;
 }
 
-.dialog > .dialog-title {
+.dialog-main > .dialog-title {
     margin: 15px 0 18px 0;
     text-align: center;
 }
 
-.dialog > .dialog-content {
+.dialog-main > .dialog-content {
     flex-grow: 1;
     margin: 0 2rem;
     text-indent: 2rem;
@@ -32,12 +45,12 @@ div.dialog {
     flex-direction: column;
 }
 
-.dialog > .dialog-btn-group {
+.dialog-main > .dialog-btn-group {
     display: flex;
     justify-content: flex-end;
     margin-right: 1rem;
 }
 
-.dialog > .dialog-btn-group > div {
+.dialog-main > .dialog-btn-group > div {
     margin: 0 8px 12px;
 }

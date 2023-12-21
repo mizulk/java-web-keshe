@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BookService {
 
-	void modifyBook(Book book);
+	boolean modifyBook(Book book);
 
 	void addNewBook(Book book);
 
@@ -16,6 +16,9 @@ public interface BookService {
 
 	List<Book> queryPopularBook();
 
+	List<Book> queryAllBook();
+
 	Book queryBookById(Integer bookId);
 
+	boolean delBook(Integer id);
 }

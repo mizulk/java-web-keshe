@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@import url("./dialog.css");
+@import url("./basic-input.css");
+
+.dialog-wrapper span {
+    color: #333;
+    display: inline-block;
+    width: 100px;
+    font-size: larger;
+}
+
+.dialog-wrapper input {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 700px;
+    height: 35px;
+    margin: 10px 0;
+    border: 1px solid #999;
+    padding: .5em 1em;
+    border-radius: 3px;
+}
+
+#dialog-reader-form {
+    width: 400px;
+}

@@ -55,4 +55,57 @@ public class BookController {
 		request.setAttribute("books", books);
 		request.getRequestDispatcher("bookSearch.jsp").forward(request, response);
 	}
+
+	@RequestMapping("/getAllBook")
+	public void getAllBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<Book> books = bookService.queryAllBook();
+		request.setAttribute("books", books);
+		request.getRequestDispatcher("manageBook.jsp").forward(request, response);
+	}
+
+	@RequestMapping("/delBook")
+	public Result delBook(Integer id) {
+		return bookService.delBook(id) ? Result.ok(null) : Result.error(404, "删除失败");
+	}
+
+	@RequestMapping("/addBook")
+	public Result addBook(
+			String bookName,
+			String publisher,
+			String author,
+			Double price,
+			String path,
+			String bookType
+	) {
+		Book book = new Book();
+		book.setBookName(bookName);
+		book.setPublisher(publisher);
+		book.setAuthor(author);
+		book.setPrice(price);
+		book.setPath(path);
+		book.setBookType(bookType);
+
+		bookService.addNewBook(book);
+		return Result.ok(book);
+	}
+
+	@RequestMapping("/modifyBook")
+	public Result modifyBook(
+			Integer id,
+			String bookName,
+			String publisher,
+			String author,
+			Double price,
+			String path,
+			String bookType
+	) {
+		Book book = bookService.queryBookById(id);
+		book.setBookName(bookName);
+		book.setPublisher(publisher);
+		book.setAuthor(author);
+		book.setPrice(price);
+		book.setPath(path);
+		book.setBookType(bookType);
+		return bookService.modifyBook(book) ? Result.ok(book) : Result.error(410, "error");
+	}
 }

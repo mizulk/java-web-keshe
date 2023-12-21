@@ -1,16 +1,16 @@
 $(function () {
 
     $('.delete').click(function () {
-        let readerId = $(this).data("id");
+        let bookid = $(this).data("id");
         $.ajax({
-            url: "delReader",
+            url: "delBook",
             method: "get",
             data: {
-                id: readerId
+                id: bookid
             },
             success(res) {
                 if (res.code === 200) {
-                    $('.reader-' + readerId).remove();
+                    $('.book-' + bookid).remove();
                     alert("É¾³ý³É¹¦");
                 } else {
                     alert("É¾³ýÊ§°Ü");
@@ -21,4 +21,5 @@ $(function () {
             }
         });
     });
+
 });

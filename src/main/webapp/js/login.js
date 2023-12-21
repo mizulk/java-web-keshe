@@ -6,7 +6,7 @@
  */
 function loginCheck(form){
     let dialogContent = $(".dialog-content");
-    let dialog = $(".dialog");
+    let dialog = $(".dialog-wrapper");
 
     let option = form.type.value;
     if (option === '0') {

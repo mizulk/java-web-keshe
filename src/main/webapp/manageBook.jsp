@@ -3,15 +3,22 @@
   User: null
   Date: 2023/12/17
   Time: 16:25
-  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>图书管理</title>
     <link rel="stylesheet" href="./css/table.css"/>
+    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/manageBook.js"></script>
 </head>
 <body>
+
+<jsp:include page="modifyBookDialog.jsp">
+    <jsp:param name="title" value="修改图书信息"/>
+</jsp:include>
+
 <jsp:include page="header.jsp"/>
 
 <div class="container">
@@ -45,29 +52,25 @@
                         <th>图书类别</th>
                         <th>图书价格</th>
                         <th>出版社</th>
-                        <th>数量</th>
+                        <th>购买数量</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <%
-                        for (int i = 0; i < 25; i++){
-                    %>
-                    <tr>
-                        <td>小王子</td>
-                        <td>123456</td>
-                        <td>文学类</td>
-                        <td>15</td>
-                        <td>高等教育出版社</td>
-                        <td>123</td>
-                        <td>
-                            <button class="edit">修改</button>&nbsp;&nbsp;
-                            <button class="delete">删除</button>
-                        </td>
-                    </tr>
-                    <%
-                        }
-                    %>
+                    <c:forEach items="${requestScope.books}" var="book">
+                        <tr class="book-${book.getId()}">
+                            <td>${book.getBookName()}</td>
+                            <td>${book.getId()}</td>
+                            <td>${book.getBookType()}</td>
+                            <td>${book.getPrice()}</td>
+                            <td>${book.getPublisher()}</td>
+                            <td>${book.getBought()}</td>
+                            <td>
+                                <button class="edit" data-id="${book.getId()}">修改</button>&nbsp;&nbsp;
+                                <button class="delete" data-id="${book.getId()}">删除</button>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
