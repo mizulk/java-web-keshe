@@ -46,7 +46,7 @@
         </div>
         <div class="m_main">
             <div class="adv2">
-                <div>图片</div>
+                <div></div>
                 <div class="add">
                     <h2>用户添加</h2>
                     <div><img src="./img/Add.png" alt="" id="add-reader"/></div>
