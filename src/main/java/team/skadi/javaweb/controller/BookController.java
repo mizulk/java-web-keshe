@@ -34,6 +34,7 @@ public class BookController {
 	@RequestMapping("/readerIndex")
 	public void getPopularBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		log.debug("Get popular book");
+		if (request.getSession() == null) return;
 		List<Book> books = bookService.queryPopularBook();
 		request.setAttribute("books", books);
 		request.getRequestDispatcher("readerIndex.jsp").forward(request, response);
@@ -51,6 +52,7 @@ public class BookController {
 
 	@RequestMapping("/searchBook")
 	public void searchBook(String search, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (request.getSession() == null) return;
 		List<Book> books = bookService.queryBooksByName(search);
 		request.setAttribute("books", books);
 		request.getRequestDispatcher("bookSearch.jsp").forward(request, response);
@@ -58,6 +60,7 @@ public class BookController {
 
 	@RequestMapping("/getAllBook")
 	public void getAllBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (request.getSession() == null) return;
 		List<Book> books = bookService.queryAllBook();
 		request.setAttribute("books", books);
 		request.getRequestDispatcher("manageBook.jsp").forward(request, response);

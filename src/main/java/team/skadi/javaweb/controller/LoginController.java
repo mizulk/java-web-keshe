@@ -61,7 +61,7 @@ public class LoginController {
 			return;
 		}
 		HttpSession session = request.getSession();
-		session.setAttribute("reader", manager);
+		session.setAttribute("manager", manager);
 		session.setMaxInactiveInterval(120);// 2h
 		request.getRequestDispatcher("managerIndex.jsp").forward(request, response);
 	}

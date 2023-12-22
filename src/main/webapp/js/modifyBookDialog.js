@@ -1,6 +1,6 @@
 $(function () {
 
-    let dialog = $('.dialog-wrapper');
+    let dialog = $('.dialog-book-wrapper');
 
     $('#dialog-cancel').click(function () {
         dialog.hide();

@@ -10,7 +10,7 @@
 <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/modifyReaderDialog.js"></script>
 <body>
-<div class="dialog-wrapper" style="display: none">
+<div class="dialog-reader-wrapper" style="display: none">
     <div class="dialog-main">
         <h2 class="dialog-title">${param.title}</h2>
         <form action="" method="post" onsubmit="return false;" id="dialog-reader-form">
@@ -23,12 +23,12 @@
                 required
                 pattern=".{1,20}"
         />
-            <span>旧密码</span
+            <span>密码</span
             ><input
                 id="dialog-reader-password"
                 type="password"
                 name="password"
-                placeholder="请输入旧密码6~20位"
+                placeholder="请输入密码6~20位"
                 required
                 pattern=".{6,20}"
         />
@@ -66,8 +66,8 @@
         />
         </form>
         <div class="dialog-btn-group">
-            <div class="btn btn-normal" id="dialog-cancel">取消</div>
-            <div class="btn btn-primary" id="dialog-confirm">确认</div>
+            <div class="btn btn-normal" id="dialog-reader-cancel">取消</div>
+            <div class="btn btn-primary" id="dialog-reader-confirm">确认</div>
         </div>
     </div>
 </div>

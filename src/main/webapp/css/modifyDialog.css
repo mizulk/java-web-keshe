@@ -3,17 +3,17 @@
 @import url("./dialog.css");
 @import url("./basic-input.css");
 
-.dialog-wrapper span {
+.dialog-main span {
     color: #333;
     display: inline-block;
     width: 100px;
     font-size: larger;
 }
 
-.dialog-wrapper input {
+.dialog-main input {
     display: inline-block;
     box-sizing: border-box;
-    width: 700px;
+    width: 400px;
     height: 35px;
     margin: 10px 0;
     border: 1px solid #999;
@@ -21,6 +21,6 @@
     border-radius: 3px;
 }
 
-#dialog-reader-form {
+.dialog-main form {
     width: 400px;
 }

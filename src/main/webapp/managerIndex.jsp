@@ -9,10 +9,16 @@
 <head>
     <title>管理员主页</title>
     <link rel="stylesheet" href="./css/managerindex.css"/>
+    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/managerIndex.js"></script>
 </head>
 <body>
 <jsp:include page="modifyBookDialog.jsp">
-    <jsp:param name="title" value="添加用户"/>
+    <jsp:param name="title" value="添加图书"/>
+</jsp:include>
+
+<jsp:include page="readerDialog.jsp">
+    <jsp:param name="title" value="添加读者"/>
 </jsp:include>
 
 <jsp:include page="header.jsp"/>
@@ -43,11 +49,11 @@
                 <div>图片</div>
                 <div class="add">
                     <h2>用户添加</h2>
-                    <div><img src="./img/Add.png" alt=""/></div>
+                    <div><img src="./img/Add.png" alt="" id="add-reader"/></div>
                 </div>
                 <div class="add">
                     <h2>图书添加</h2>
-                    <div><img src="./img/Add.png" alt=""/></div>
+                    <div><img src="./img/Add.png" alt="" id="add-book"/></div>
                 </div>
             </div>
         </div>

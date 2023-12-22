@@ -5,25 +5,29 @@
   Time: 19:40
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <link rel="stylesheet" href="css/modifyDialog.css">
 <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/modifyBookDialog.js"></script>
 <body>
-<div class="dialog-wrapper" style="display: none">
+<div class="dialog-book-wrapper" style="display: none">
     <div class="dialog-main">
         <h2 class="dialog-title">${param.title}</h2>
         <form action=""
               method="post"
               onsubmit="return false;"
+              id="dialog-book-form"
         >
-            <span>图书id：</span
-            ><input
-                id="dialog-book-id"
-                type="text"
-                name="id"
-                readonly
-        />
+            <c:if test="${param.title eq '修改读者信息'}">
+                <span>图书id：</span
+                ><input
+                    id="dialog-book-id"
+                    type="text"
+                    name="id"
+                    readonly
+            />
+            </c:if>
             <span>书名：</span
             ><input
                 id="dialog-book-bookName"
@@ -72,8 +76,8 @@
         />
         </form>
         <div class="dialog-btn-group">
-            <div class="btn btn-normal" id="dialog-cancel">取消</div>
-            <div class="btn btn-primary" id="dialog-confirm">确认</div>
+            <div class="btn btn-normal" id="dialog-book-cancel">取消</div>
+            <div class="btn btn-primary" id="dialog-book-confirm">确认</div>
         </div>
     </div>
 </div>
