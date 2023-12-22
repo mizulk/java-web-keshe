@@ -44,7 +44,8 @@ public class LoginFilter implements Filter {
 				break;
 			}
 		}
-		for (String str : contains) {
+		for (int i = 0; i < contains.length && flag; i++) {
+			String str = contains[i];
 			if (url.contains(str)) {
 				flag = false;
 				break;
