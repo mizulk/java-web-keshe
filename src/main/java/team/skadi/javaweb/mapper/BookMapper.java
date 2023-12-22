@@ -22,7 +22,7 @@ public interface BookMapper {
 	@Select("SELECT * FROM books WHERE book_type = #{bookType}")
 	List<Book> selectBooksByType(@Param("bookType") String bookType);
 
-	@Select("SELECT * FROM books WHERE book_name = #{bookName}")
+	@Select("SELECT * FROM books WHERE book_name LIKE CONCAT('%', #{bookName}, '%')")
 	List<Book> selectBooksByName(@Param("bookName") String bookName);
 
 	@Select("SELECT * FROM books ORDER BY bought DESC limit 10;")
