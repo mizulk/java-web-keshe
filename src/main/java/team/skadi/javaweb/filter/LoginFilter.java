@@ -1,6 +1,8 @@
 package team.skadi.javaweb.filter;
 
 import lombok.extern.slf4j.Slf4j;
+import team.skadi.javaweb.pojo.Manager;
+import team.skadi.javaweb.pojo.Reader;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -29,34 +31,37 @@ public class LoginFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
+		Manager manager = (Manager) session.getAttribute("manager");
+		Reader reader = (Reader) session.getAttribute("reader");
 		String url = req.getRequestURI();
 
-		if (url.endsWith("/")) {
-			log.debug("index.jsp, doFilter");
-			chain.doFilter(request, response);
-			return;
+		String[] endwith = {".js", ".css", ".jpg", ".png", "index.jsp", "error.jsp"};
+		String[] contains = {"Login", "Register", "login", "register"};
+		boolean flag = true;
+		for (String str : endwith) {
+			if (url.endsWith(str)) {
+				flag = false;
+				break;
+			}
 		}
-
-		if (url.endsWith("readerRegister") || url.endsWith("readerLogin") || url.endsWith("managerLogin")) {
-			log.debug("Controller login register method, doFilter");
-			chain.doFilter(request, response);
-			return;
+		for (String str : contains) {
+			if (url.contains(str)) {
+				flag = false;
+				break;
+			}
 		}
-
-		if (url.endsWith("login.jsp") || url.endsWith("register.jsp")) {
-			log.debug("login.jsp or register.jsp, doFilter");
-			chain.doFilter(request, response);
-			return;
-		} else {
-			if (session.getAttribute("reader") != null || session.getAttribute("manager") != null) {
-				log.debug("Have session doFilter");
+		if (flag) {
+			if (reader != null || manager != null) {
+				log.debug("Have session to assess {}", url);
 				chain.doFilter(request, response);
 			} else {
-				log.debug("Have no session redirect to login.jsp");
-				resp.sendRedirect("login.jsp");
-				return;
+				log.debug("Have no session to assess {}", url);
+				resp.sendRedirect("index.jsp");
 			}
-		} 
-		chain.doFilter(request, response);
+		} else {
+			log.debug("static resource: {}", url);
+			chain.doFilter(request, response);
+		}
+
 	}
 }
