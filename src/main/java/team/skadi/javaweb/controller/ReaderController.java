@@ -26,7 +26,7 @@ public class ReaderController {
 	public Result modifyReader(
 			String account,
 			String name,
-			String oldPassword,
+			String oldpassword,
 			String tel,
 			String newpassword,
 			String confirmpsw,
@@ -38,7 +38,7 @@ public class ReaderController {
 		Reader reader1 = readerService.getUserByAccount(account);
 
 		if (request.getSession().getAttribute("reader") instanceof Reader
-				&& !reader1.getPassword().equals(oldPassword))
+				&& !reader1.getPassword().equals(oldpassword))
 			return Result.error(400, "密码错误");
 
 		reader1.setName(name);
