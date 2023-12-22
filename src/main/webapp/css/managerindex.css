@@ -70,7 +70,9 @@
 .adv2 div:first-child {
     grid-row-start: 1;
     grid-row-end: 3;
-    background: cyan;
+    background-image: url("../img/managerindex.jpg");
+    background-position: center;
+    background-size: cover;
     width: 400px;
 }
 
