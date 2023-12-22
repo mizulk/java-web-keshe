@@ -15,6 +15,7 @@
 <body>
 <jsp:include page="modifyBookDialog.jsp">
     <jsp:param name="title" value="添加图书"/>
+    <jsp:param name="mode" value="0"/>
 </jsp:include>
 
 <jsp:include page="readerDialog.jsp">

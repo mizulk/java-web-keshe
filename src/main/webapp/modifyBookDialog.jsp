@@ -19,7 +19,7 @@
               onsubmit="return false;"
               id="dialog-book-form"
         >
-            <c:if test="${param.title eq '修改读者信息'}">
+            <c:if test="${param.mode eq  '1'}">
                 <span>图书id：</span
                 ><input
                     id="dialog-book-id"

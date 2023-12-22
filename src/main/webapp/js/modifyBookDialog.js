@@ -2,11 +2,11 @@ $(function () {
 
     let dialog = $('.dialog-book-wrapper');
 
-    $('#dialog-cancel').click(function () {
+    $('#dialog-book-cancel').click(function () {
         dialog.hide();
     });
 
-    $('#dialog-confirm').click(function () {
+    $('#dialog-book-confirm').click(function () {
         let id = $('#dialog-book-id').val(),
             bookName = $('#dialog-book-bookName').val(),
             publisher = $('#dialog-book-publisher').val(),

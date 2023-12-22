@@ -2,11 +2,11 @@ $(function () {
 
     let dialog = $('.dialog-reader-wrapper');
 
-    $('#dialog-cancel').click(function () {
+    $('#dialog-reader-cancel').click(function () {
         dialog.hide();
     });
 
-    $('#dialog-confirm').click(function () {
+    $('#dialog-reader-confirm').click(function () {
         let form = $('#dialog-reader-form');
         let account = form.find('#dialog-reader-account').val(),
             newpassword = form.find('#dialog-reader-password').val(),
