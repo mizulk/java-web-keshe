@@ -42,3 +42,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### config ###
+# database config
+src/main/resources/database-config.properties
