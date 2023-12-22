@@ -20,7 +20,7 @@ public class MainTest {
 		File file = new File(configPath);
 		if (!file.exists()) {
 			try {
-				String password = JOptionPane.showInputDialog("检测到无mybatis配置文件\n请输入你的MySQL密码来生成配置文件：", "123456");
+				String password = JOptionPane.showInputDialog("检测到无数据库配置文件\n请输入你的MySQL密码来生成配置文件：", "123456");
 				BufferedReader in = new BufferedReader(new FileReader(templatePath));
 				BufferedWriter out = new BufferedWriter(new FileWriter(file));
 				String line;
