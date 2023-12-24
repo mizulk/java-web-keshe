@@ -20,6 +20,7 @@
 
 <jsp:include page="readerDialog.jsp">
     <jsp:param name="title" value="添加读者"/>
+    <jsp:param name="mode" value="0"/>
 </jsp:include>
 
 <jsp:include page="header.jsp"/>

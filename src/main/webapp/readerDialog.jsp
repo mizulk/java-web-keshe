@@ -5,10 +5,13 @@
   Time: 1:13
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <link rel="stylesheet" href="css/modifyDialog.css">
 <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="./js/modifyReaderDialog.js"></script>
+<c:if test="${param.mode eq  '1'}">
+    <script type="text/javascript" src="./js/modifyReaderDialog.js"></script>
+</c:if>
 <body>
 <div class="dialog-reader-wrapper" style="display: none">
     <div class="dialog-main">

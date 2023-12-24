@@ -17,6 +17,7 @@
 
 <jsp:include page="readerDialog.jsp">
     <jsp:param name="title" value="修改读者信息"/>
+    <jsp:param name="mode" value="1"/>
 </jsp:include>
 
 <jsp:include page="header.jsp"/>
