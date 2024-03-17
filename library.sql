@@ -167,3 +167,5 @@ DROP VIEW IF EXISTS `my_order`;
 CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `my_order` AS select `readers`.`name` AS `reader_name`,`orders`.`id` AS `order_id`,`books`.`book_name` AS `book_name`,`books`.`id` AS `book_id`,`books`.`price` AS `book_price`,`orders`.`order_time` AS `order_time`,`orders`.`amount` AS `order_amount`,`readers`.`id` AS `reader_id` from ((`readers` join `orders` on((`readers`.`id` = `orders`.`reader_id`))) join `books` on((`orders`.`book_id` = `books`.`id`)));
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+

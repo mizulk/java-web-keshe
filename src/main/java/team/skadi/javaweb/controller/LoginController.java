@@ -45,7 +45,9 @@ public class LoginController {
 		reader.setPassword(password);
 		if (readerService.register(reader)) {
 			response.setHeader("refresh", "3;login.jsp");
-			response.getWriter().print("<script>alert('success')</script>");
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/html;charset=utf-8");
+			response.getWriter().print("<script>alert('注册成功，页面将会在3秒后跳转到登录页面')</script>");
 		} else {
 			request.setAttribute("msg", "注册失败");
 			request.getRequestDispatcher("error.jsp").forward(request, response);

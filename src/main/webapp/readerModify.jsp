@@ -50,7 +50,7 @@
                             id="reader-modify-name"
                             type="text"
                             name="name"
-                            placeholder="请输入用户名1~20位"
+                            placeholder="请输入用户名1~20位(必填)"
                             value="${sessionScope.get("reader").getName()}"
                             required
                     />
@@ -59,7 +59,7 @@
                             id="reader-modify-oldpassword"
                             type="password"
                             name="oldpassword"
-                            placeholder="请输入旧密码"
+                            placeholder="请输入旧密码(必填)"
                             pattern=".{6,20}"
                             required
                     />
@@ -78,7 +78,7 @@
                             id="reader-modify-newpassword"
                             type="password"
                             name="newpassword"
-                            placeholder="请输入新密码6~20位"
+                            placeholder="请输入新密码6~20位(可选)"
                             pattern=".{6,20}"
                     />
                         <span>确认密码</span
@@ -86,7 +86,7 @@
                             id="reader-modify-confirmpsw"
                             type="password"
                             name="confirmpsw"
-                            placeholder="请再输入新密码"
+                            placeholder="请再输入新密码(可选)"
                             pattern=".{6,20}"
                     />
                         <span>邮箱</span
@@ -94,7 +94,7 @@
                             id="reader-modify-email"
                             type="email"
                             name="email"
-                            placeholder="xxx@xxx.com"
+                            placeholder="xxx@xxx.com(可选)"
                             value="${sessionScope.get("reader").getEMail()}"
                     />
                         <span>备注</span
